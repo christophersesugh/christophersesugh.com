@@ -1,10 +1,10 @@
 import AppHead from "components/app-head";
 import React from "react";
 
-export default function About() {
+export default function Edit() {
   return (
     <>
-      <AppHead title="About | CSA" />
+      <AppHead title="Edit Post | CSA" />
       index
     </>
   );

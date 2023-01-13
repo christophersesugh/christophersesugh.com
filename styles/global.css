@@ -8,3 +8,41 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+
+.view li {
+  list-style-type: square;
+}
+
+.view ol > li {
+  list-style-type: decimal;
+}
+
+.view p,
+.view h1,
+.view h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 2rem;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+.view img {
+  margin: 3rem 0 3rem 0;
+}
+
+.view mark {
+  background-color: antiquewhite;
+}
+
+.view a {
+  text-decoration: underline;
+  color: blue;
+}
+.view h1 {
+  font-size: 1.7em;
+}
+
+.view h2 {
+  font-size: 1.4em;
+}
