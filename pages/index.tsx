@@ -1,11 +1,12 @@
 import AppHead from "components/app-head";
+import Hero from "components/hero";
 
 function HomePage() {
   return (
-    <div className="">
+    <>
       <AppHead title="CSA" />
-      <span className="text-red-500">Welcome to Next.js!</span>
-    </div>
+      <Hero />
+    </>
   );
 }
 

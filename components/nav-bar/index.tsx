@@ -3,7 +3,7 @@ import MainNav from "./components/main-nav";
 import MobileNav from "./components/mobile-nav";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
       <MainNav isOpen={isOpen} setIsOpen={setIsOpen} />
