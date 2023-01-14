@@ -24,9 +24,9 @@ export default function Hero() {
           </Link>
 
           <Link href="/#about">
-            <button className="rounded-xl  text-xl p-4 mt-6 border-2 border-slate-400 hover:border-slate-800 dark:hover:border-[#fff]">
-              <BsArrowDown className="text-xl inline animate-bounce mr-4" />{" "}
-              Learn more about Chris.
+            <button className="rounded-xl  text-xl p-4 mt-6 border-2 border-slate-400 hover:border-slate-800 dark:hover:border-[#fff] flex items-center">
+              <BsArrowDown className="text-xl inline animate-bounce mr-4" />
+              <span>Learn more about Chris.</span>
             </button>
           </Link>
         </div>
