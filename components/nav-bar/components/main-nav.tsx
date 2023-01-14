@@ -13,7 +13,7 @@ type MainNavProps = {
 };
 
 export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
-  const [toggleThemeMode, mode] = useTheme();
+  const [toggleThemeMode, darkMode] = useTheme();
   return (
     <nav className="transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
       <Link href="/">
@@ -50,7 +50,7 @@ export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
           className="hidden md:block rounded-full border-2 p-2 hover:border-black dark:hover:border-slate-500
         "
         >
-          {mode ? (
+          {darkMode ? (
             <BsMoon className="text-3xl" />
           ) : (
             <BsSun className="text-3xl" />

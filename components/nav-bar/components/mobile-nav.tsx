@@ -33,17 +33,18 @@ export default function MobileNav({ isOpen, setIsOpen }: MobileNavProps) {
           </li>
         ))}
         <li className="border-t-2 py-8 px-4 flex justify-center">
+          {/* toggle theme mode */}
           <NavButton
             onClick={handleButtonClick}
             className="rounded-3xl border-2 p-2"
           >
             {darkMode ? (
               <>
-                <BsMoon className="text-3xl inline mr-4" /> light mode
+                <BsSun className="text-3xl inline mr-4" /> light mode
               </>
             ) : (
               <>
-                <BsSun className="text-3xl inline mr-4" /> dark mode
+                <BsMoon className="text-3xl inline mr-4" /> dark mode
               </>
             )}
           </NavButton>

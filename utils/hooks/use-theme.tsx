@@ -9,12 +9,10 @@ export function useTheme() {
   const colorTheme: string = theme === "dark" ? "light" : "dark";
   const mode = colorTheme === "light" ? true : false;
 
-  // const [darkMode, setDarkMode] = React.useState<boolean>(() =>
   const darkMode =
     typeof window !== "undefined"
       ? Boolean(JSON.parse(window.localStorage.getItem("mode")!))
       : true;
-  // );
 
   React.useEffect(() => {
     const root = window.document.documentElement;
