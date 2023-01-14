@@ -12,7 +12,7 @@ export function useTheme() {
   const darkMode =
     typeof window !== "undefined"
       ? Boolean(JSON.parse(window.localStorage.getItem("mode")!))
-      : true;
+      : mode;
 
   React.useEffect(() => {
     const root = window.document.documentElement;

@@ -17,7 +17,7 @@ export default function Navbar() {
 export const navItems = [
   {
     name: "blog",
-    link: "/blog",
+    link: "/posts",
   },
   {
     name: "discord",

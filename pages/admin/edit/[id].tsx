@@ -1,5 +1,11 @@
+import AppHead from "components/app-head";
 import React from "react";
 
 export default function EditPost() {
-  return <div>[id]</div>;
+  return (
+    <>
+      <AppHead title="post name | CSA" />
+      [id]
+    </>
+  );
 }

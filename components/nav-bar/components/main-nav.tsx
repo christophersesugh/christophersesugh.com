@@ -15,7 +15,7 @@ type MainNavProps = {
 export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
   const [toggleThemeMode, darkMode] = useTheme();
   return (
-    <nav className="transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
+    <nav className="max-w-8xl mx-auto transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
       <Link href="/">
         <span className="text-2xl font-black text-bold hover:underline underline-offset-8">
           Christopher A. Sesugh

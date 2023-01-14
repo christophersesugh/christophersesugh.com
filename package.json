@@ -26,6 +26,7 @@
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.4",
     "react-syntax-highlighter": "^15.5.0",
+    "reading-time-estimator": "^1.7.2",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {

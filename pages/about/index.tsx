@@ -4,7 +4,7 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <AppHead title="About | CSA" />
+      <AppHead title="About CSA" />
       index
     </>
   );
