@@ -14,7 +14,7 @@ export default function Footer() {
         <General />
         <Sitemap />
       </section>
-      <p>All rights reserved &copy; Christopher Aondona Sesugh {year}.</p>
+      <p>All rights reserved &copy; Christopher A. Sesugh {year}.</p>
     </footer>
   );
 }

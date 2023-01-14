@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row max-w-5xl mx-auto mt-32 md:my-40 pt-12"
+      className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row max-w-5xl mx-auto mt-32 md:my-40 mb-12 pt-12"
     >
       <Image
         src="/assets/chris.jpeg"

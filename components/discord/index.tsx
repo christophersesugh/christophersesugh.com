@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BsArrowDown, BsArrowRight, BsDiscord } from "react-icons/bs";
+import { BsArrowRight, BsDiscord } from "react-icons/bs";
 
 export default function Discord() {
   return (
