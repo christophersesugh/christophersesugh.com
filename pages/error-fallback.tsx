@@ -12,7 +12,7 @@ export default function ErrorFallback({ error, resetErrorBoundary }: any) {
       >
         <h1 className="text-4xl text-center">An Error Occurred</h1>
         <h2 className="text-xl text-red-600 text-center my-8">
-          {error.message}
+          {error?.message}
         </h2>
         <button
           onClick={resetErrorBoundary}

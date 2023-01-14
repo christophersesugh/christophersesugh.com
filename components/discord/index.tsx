@@ -7,7 +7,7 @@ export default function Discord() {
   return (
     <section
       id="discord"
-      className="max-w-6xl flex justify-center items-center mx-auto px-16 mt-12 gap-12"
+      className="max-w-6xl flex justify-center items-center mx-auto px-16 my-12 gap-12"
     >
       <div className="flex-col flex">
         <h2 className="text-3xl">
