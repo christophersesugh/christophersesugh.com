@@ -16,7 +16,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="dark:bg-[#1f2028] dark:text-[#fff] bg-[#fff] text-[#1f2028]">
+      <body className="dark:bg-[#1f2028] dark:text-[#fff] bg-[#fff] text-[#1f2028] transition-all duration-300">
         <Main />
         <NextScript />
       </body>

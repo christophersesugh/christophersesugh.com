@@ -4,8 +4,8 @@ import { BsSun, BsMoon } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { navItems } from "..";
 import NavButton from "./nav-button";
-import { useTheme } from "utils/hooks/use-theme";
 import Link from "next/link";
+import { useTheme } from "utils/hooks/use-theme";
 
 type MainNavProps = {
   isOpen: boolean;
@@ -13,8 +13,7 @@ type MainNavProps = {
 };
 
 export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
-  const [toggleThemeMode, darkMode] = useTheme();
-
+  const [toggleThemeMode, mode] = useTheme();
   return (
     <nav className="transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
       <Link href="/">
@@ -45,12 +44,13 @@ export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
             <FaBars className="text-3xl" />
           )}
         </NavButton>
+
         <NavButton
           onClick={toggleThemeMode}
           className="hidden md:block rounded-full border-2 p-2 hover:border-black dark:hover:border-slate-500
         "
         >
-          {darkMode ? (
+          {mode ? (
             <BsMoon className="text-3xl" />
           ) : (
             <BsSun className="text-3xl" />

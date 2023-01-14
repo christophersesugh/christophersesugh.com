@@ -12,14 +12,13 @@ type MobileNavProps = {
 
 export default function MobileNav({ isOpen, setIsOpen }: MobileNavProps) {
   const [toggleThemeMode, darkMode] = useTheme();
-
   function handleButtonClick() {
     toggleThemeMode();
     setIsOpen(false);
   }
 
   return isOpen ? (
-    <nav className="w-full absolute bg-[#fff] dark:bg-[#1f2028] border-b-2">
+    <nav className="w-full md:hidden absolute bg-[#fff] dark:bg-[#1f2028] border-b-2">
       <ul className="w-full">
         {navItems.map((item) => (
           <li key={item.name} className="border-t-2 py-8 px-4 w-full">
@@ -40,11 +39,11 @@ export default function MobileNav({ isOpen, setIsOpen }: MobileNavProps) {
           >
             {darkMode ? (
               <>
-                <BsMoon className="text-3xl inline mr-4" /> dark mode
+                <BsMoon className="text-3xl inline mr-4" /> light mode
               </>
             ) : (
               <>
-                <BsSun className="text-3xl inline mr-4" /> light mode
+                <BsSun className="text-3xl inline mr-4" /> dark mode
               </>
             )}
           </NavButton>

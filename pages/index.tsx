@@ -1,6 +1,8 @@
 import AppHead from "components/app-head";
 import Hero from "components/hero";
 import About from "components/about";
+import Discord from "components/discord";
+import Posts from "components/posts";
 
 function HomePage() {
   return (
@@ -8,6 +10,8 @@ function HomePage() {
       <AppHead title="CSA" />
       <Hero />
       <About />
+      <Discord />
+      <Posts />
     </>
   );
 }
