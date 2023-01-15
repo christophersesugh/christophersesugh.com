@@ -13,8 +13,7 @@ export default function General() {
 }
 
 const items = [
-  { name: "some", link: "thing" },
-  { name: "some", link: "thing" },
-  { name: "some", link: "thing" },
-  { name: "some", link: "thing" },
+  { name: "My Mission", link: "/mission" },
+  { name: "Privacy policy", link: "/privacy-policy" },
+  { name: "Terms of use", link: "/terms-of-use" },
 ];

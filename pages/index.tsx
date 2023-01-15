@@ -7,7 +7,7 @@ import Posts from "components/posts";
 function HomePage() {
   return (
     <>
-      <AppHead title="CSA" />
+      <AppHead title="Christopher A. Sesugh" />
       <Hero />
       <About />
       <Discord />

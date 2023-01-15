@@ -16,6 +16,7 @@
   "author": "Christopher Sesugh",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.2.2",
     "dashify": "^2.0.0",
     "firebase": "^9.15.0",
     "firebase-admin": "^11.4.1",
@@ -25,13 +26,16 @@
     "react-error-boundary": "^3.1.4",
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.4",
+    "react-query": "^3.39.2",
     "react-syntax-highlighter": "^15.5.0",
     "reading-time-estimator": "^1.7.2",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
+    "@types/dashify": "^1.0.1",
     "@types/node": "18.11.15",
     "@types/react": "18.0.26",
+    "@types/react-syntax-highlighter": "^15.5.6",
     "autoprefixer": "^10.4.13",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",

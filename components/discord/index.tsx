@@ -7,7 +7,7 @@ export default function Discord() {
   return (
     <section
       id="discord"
-      className="max-w-6xl flex justify-center items-center mx-auto px-16 my-12 gap-12"
+      className="max-w-6xl flex justify-center items-center mx-auto px-16 my-40 gap-12"
     >
       <div className="flex-col flex">
         <h2 className="text-3xl">
@@ -33,10 +33,11 @@ export default function Discord() {
       </div>
       <div className="hidden md:flex w-full">
         <Image
-          src="/assets/discord2.png"
+          src="/assets/discord.png"
           alt="discord"
           width={300}
           height={300}
+          className="rounded-lg"
         />
       </div>
     </section>

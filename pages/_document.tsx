@@ -15,6 +15,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body className="dark:bg-[#1f2028] dark:text-[#fff] bg-[#fff] text-[#1f2028] transition-all duration-300">
         <Main />

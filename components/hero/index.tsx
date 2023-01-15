@@ -5,7 +5,7 @@ import { BsArrowDown } from "react-icons/bs";
 
 export default function Hero() {
   return (
-    <header className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row-reverse max-w-6xl mx-auto mt-12">
+    <header className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row-reverse max-w-6xl mx-auto mt-12 mb-40">
       <Image
         src="/assets/header.png"
         alt="header image"

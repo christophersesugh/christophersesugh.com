@@ -12,6 +12,6 @@ export default function Contact() {
 }
 
 const items = [
-  { name: "some", link: "thing" },
-  { name: "some", link: "thing" },
+  { name: "Email Chris", link: "/contact" },
+  { name: "Book a Call", link: "/contact#book-a-call" },
 ];
