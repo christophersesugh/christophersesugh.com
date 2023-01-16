@@ -4,6 +4,10 @@ import { useRouter } from "next/router";
 import db from "utils/db";
 import LoadingIndicator from "components/loading-indicator";
 import Markdown from "components/markdown";
+import Image from "next/image";
+import { readingTime } from "reading-time-estimator";
+import { BsArrowLeft } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Post({ post }: any) {
   const router = useRouter();
@@ -12,25 +16,42 @@ export default function Post({ post }: any) {
     return <LoadingIndicator path="/blog" />;
   }
 
+  const result = readingTime(post.body, 238, "en");
+
   return (
     <div className="my-20 max-w-2xl mx-8 md:mx-auto">
       <AppHead title={`Blog post | CSA`} />
-      <button>Back to review</button>
+      <div className="my-20">
+        <Link href="/blog">
+          <button className="text-xl text-bold">
+            <BsArrowLeft className="inline mr-4 text-2xl font-extrabold" /> Back
+            to review
+          </button>
+        </Link>
+      </div>
       {post ? (
-        <>
-          <AppHead title={`${post.title} | CSA`} />
-          <div className="max-w-2xl mx-auto">
-            <h1 className="text-4xl font-extrabold text-center">
-              {post.title}
-            </h1>
-            <h2 className="text-xl text-slate-400 text-center">
-              {post.createdAt.substring(0, post.createdAt.length - 13)}
+        <div>
+          <div className="max-w-2xl mx-4 md:mx-auto flex flex-col justify-center">
+            <h1 className="text-4xl font-extrabold capitalize">{post.title}</h1>
+            <h2 className="text-xl text-slate-400 mt-4 mb-12">
+              {post.createdAt.substring(0, post.createdAt.length - 13)} --{" "}
+              {result.text}
             </h2>
-            <div className="max-w-2xl view text-lg">
+            <div className="block w-full relative h-auto">
+              <Image
+                // fill
+                width={300}
+                height={300}
+                src={post.image}
+                alt={post.title}
+                className="rounded block relative w-full mb-12"
+              />
+            </div>
+            <div>
               <Markdown code={post.body} />
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <p> no post found</p>
       )}
@@ -47,7 +68,7 @@ export const getStaticPaths = async () => {
   }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

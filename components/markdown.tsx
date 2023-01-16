@@ -1,19 +1,17 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  docco,
-  darcula,
-  darkula,
-} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useTheme } from "utils/hooks/use-theme";
 
 export default function Markdown({ code }: any) {
   const [, darkMode] = useTheme();
   return (
-    <div className="mx-8">
+    <div className="view text-lg dark:text-slate-400">
       <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
         components={{
           code({ node, inline, className, children, ...props }) {
@@ -22,6 +20,8 @@ export default function Markdown({ code }: any) {
               <SyntaxHighlighter
                 // eslint-disable-next-line react/no-children-prop
                 children={String(children).replace(/\n$/, "")}
+                lineNumberStyle={darcula}
+                showLineNumbers
                 style={darcula as any}
                 language={match[1]}
                 PreTag="div"

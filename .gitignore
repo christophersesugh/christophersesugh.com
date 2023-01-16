@@ -1,6 +1,6 @@
 /node_modules
 /build
-/utils/db/serviceAccountKey.json
+# /utils/db/serviceAccountKey.json
 next-env.d.ts
 .next
 .DS_Store

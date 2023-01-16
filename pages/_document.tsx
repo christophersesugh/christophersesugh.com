@@ -16,7 +16,7 @@ export default function Document() {
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
         />
       </Head>

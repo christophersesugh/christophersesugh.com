@@ -2,30 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
 body {
   font-family: "Roboto", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
 }
 
-.view code {
-  font-family: "Fira Code", "Lucida Sans Regular", "Lucida Grande",
+code {
+  font-family: Menlo, "DM Mono" "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.view li {
-  list-style-type: square;
-}
-.view img {
-  max-width: 100%;
-  width: 100%;
-  max-height: min-content;
-  height: 400px;
-}
-
-.view ol > li {
-  list-style-type: decimal;
 }
 
 .view p,
@@ -39,17 +23,27 @@ body {
   margin-bottom: 15px;
 }
 
+.view li {
+  list-style-type: square;
+}
 .view img {
-  margin: 3rem 0 3rem 0;
+  max-width: 100%;
+  width: 100%;
+  max-height: min-content;
+  height: auto;
 }
 
-.view mark {
-  background-color: antiquewhite;
+.view ol > li {
+  list-style-type: decimal;
 }
+
+/* .view img {
+  margin: 3rem 0 3rem 0;
+} */
 
 .view a {
   text-decoration: underline;
-  color: blue;
+  color: rgb(82, 82, 212);
 }
 .view h1 {
   font-size: 1.7em;

@@ -6,6 +6,7 @@ import Form from "../components/form";
 import { useAsync } from "utils/hooks/use-async";
 import { isError, useMutation, useQueryClient } from "react-query";
 import dashify from "dashify";
+import LoadingIndicator from "components/loading-indicator";
 
 export default function EditPost() {
   const {
@@ -18,13 +19,14 @@ export default function EditPost() {
     isIdle,
   } = useAsync();
   const [title, setTitle] = React.useState("");
+  const [image, setImage] = React.useState("");
   const [body, setBody] = React.useState(``);
   const router = useRouter();
   const { id } = router.query;
 
   const create = useMutation({
     mutationFn: (post) => {
-      return axios.put(`/api/post/${id}`, post);
+      return axios.patch(`/api/post/${id}`, post);
     },
     onSuccess: () => queryClient.invalidateQueries("posts"),
   });
@@ -49,25 +51,39 @@ export default function EditPost() {
     }
     run(fetch());
     setTitle(post?.data?.post.title);
+    setImage(post?.data?.post.image);
     setBody(post?.data?.post.body);
-  }, [id, post?.data?.post.body, post?.data?.post.title, run]);
+  }, [
+    id,
+    post?.data?.post.body,
+    post?.data?.post.image,
+    post?.data?.post.title,
+    run,
+  ]);
 
   return (
     <>
       <AppHead title={`Edit post | CSA`} />
       {isLoading || isIdle ? (
-        <p>Loading...</p>
+        <LoadingIndicator path={router.asPath} />
       ) : isError ? (
         <p>{error.message}</p>
       ) : isSuccess ? (
         <div className="mx-8">
           <Form
-            onSubmit={({ title, body }) =>
-              create.mutateAsync({ title, slug: dashify(title), body } as any)
+            onSubmit={({ title, image, body }) =>
+              create.mutateAsync({
+                title,
+                image,
+                slug: dashify(title),
+                body,
+              } as any)
             }
             title={title}
+            image={image}
             body={body}
             setTitle={setTitle}
+            setImage={setImage}
             setBody={setBody}
           />
           <div>

@@ -17,7 +17,7 @@ export default function Hero() {
           Helping change the world through quality software.
         </h1>
         <div className="flex flex-col">
-          <Link href="/posts">
+          <Link href="/blog">
             <button className="rounded-[2em] bg-[#1f2028] text-[#fff] dark:bg-[#fff] dark:text-[#1f2028] text-xl p-6 mt-8">
               Read the Blog
             </button>

@@ -29,6 +29,7 @@
     "react-query": "^3.39.2",
     "react-syntax-highlighter": "^15.5.0",
     "reading-time-estimator": "^1.7.2",
+    "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {

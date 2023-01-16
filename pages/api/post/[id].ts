@@ -5,7 +5,7 @@ const singlePostHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query as any;
 
   try {
-    if (req.method === "PUT") {
+    if (req.method === "PATCH") {
       await db
         .collection("posts")
         .doc(id)
