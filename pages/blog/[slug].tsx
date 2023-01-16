@@ -20,7 +20,7 @@ export default function Post({ post }: any) {
 
   return (
     <div className="my-20 max-w-2xl mx-8 md:mx-auto">
-      <AppHead title={`Blog post | CSA`} />
+      <AppHead title={`${post.title} | CAS`} />
       <div className="my-20">
         <Link href="/blog">
           <button className="text-xl text-bold">

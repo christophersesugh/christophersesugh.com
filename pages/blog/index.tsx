@@ -46,9 +46,9 @@ export default function Blog() {
             <>
               {posts.map((post: any) => (
                 <div key={post.id}>
-                  <Link href={`/blog/${post.slug}`}>
-                    <PostCard post={post} />
-                  </Link>
+                  {/* <Link href={`/blog/${post.slug}`}> */}
+                  <PostCard post={post} />
+                  {/* </Link> */}
                   <br />
                 </div>
               ))}
