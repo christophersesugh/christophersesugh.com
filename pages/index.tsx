@@ -9,10 +9,19 @@ import db from "utils/db";
 import "../utils/axios";
 import axios from "axios";
 
+let config = {
+  url: "posts",
+  method: "get",
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*",
+    "Access-Control-Allow-Credentials": "true",
+  },
+};
 function HomePage({ postsData }: any) {
   const { data } = useQuery({
     queryKey: "posts",
-    queryFn: () => axios.get("posts").then((data) => data),
+    queryFn: () => axios(config).then((data) => data),
   });
   console.log(data);
 
