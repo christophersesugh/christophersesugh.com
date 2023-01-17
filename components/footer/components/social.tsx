@@ -22,7 +22,10 @@ export default function Social() {
 }
 
 const handles = [
-  { icon: <BsGithub />, link: "some" },
-  { icon: <BsLinkedin />, link: "some" },
-  { icon: <BsTwitter />, link: "some" },
+  { icon: <BsGithub />, link: "https://github.com/christophersesugh" },
+  {
+    icon: <BsLinkedin />,
+    link: "https://www.linkedin.com/christopher-sesugh-265332176/",
+  },
+  { icon: <BsTwitter />, link: "https://twitter.com/coding_simba" },
 ];

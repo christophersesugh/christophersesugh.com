@@ -25,7 +25,7 @@ export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
         {navItems.map((item) => (
           <li key={item.name}>
             <Link href={item.link}>
-              <NavButton className="capitalize hover:underline underline-offset-8 transition-all duration-300 hover:ease-linear dark:text-slate-300">
+              <NavButton className="capitalize hover:underline  focus:underline underline-offset-8 transition-all duration-300 hover:ease-linear dark:text-slate-300">
                 {item.name}
               </NavButton>
             </Link>

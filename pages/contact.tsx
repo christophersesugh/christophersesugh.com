@@ -1,5 +1,11 @@
+import AppHead from "components/app-head";
 import React from "react";
 
 export default function Contact() {
-  return <div>contact</div>;
+  return (
+    <>
+      <AppHead title="Contact CAS" />
+      contact
+    </>
+  );
 }

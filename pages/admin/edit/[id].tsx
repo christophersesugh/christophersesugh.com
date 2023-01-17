@@ -7,6 +7,7 @@ import { useAsync } from "utils/hooks/use-async";
 import { isError, useMutation, useQueryClient } from "react-query";
 import dashify from "dashify";
 import LoadingIndicator from "components/loading-indicator";
+import Markdown from "components/markdown";
 
 export default function EditPost() {
   const {
@@ -18,9 +19,12 @@ export default function EditPost() {
     isError,
     isIdle,
   } = useAsync();
-  const [title, setTitle] = React.useState("");
-  const [image, setImage] = React.useState("");
-  const [body, setBody] = React.useState(``);
+  const [postValues, setPost] = React.useState({
+    title: "",
+    image: "",
+    tags: "",
+    body: "",
+  });
   const router = useRouter();
   const { id } = router.query;
 
@@ -46,20 +50,13 @@ export default function EditPost() {
   React.useEffect(() => {
     async function fetch() {
       if (id) {
-        return await axios.get(`/api/post/${id}`);
+        return await axios
+          .get(`/api/post/${id}`)
+          .then((data) => setPost({ ...data?.data?.post }));
       }
     }
     run(fetch());
-    setTitle(post?.data?.post.title);
-    setImage(post?.data?.post.image);
-    setBody(post?.data?.post.body);
-  }, [
-    id,
-    post?.data?.post.body,
-    post?.data?.post.image,
-    post?.data?.post.title,
-    run,
-  ]);
+  }, [id, post?.data?.post, run]);
 
   return (
     <>
@@ -71,21 +68,21 @@ export default function EditPost() {
       ) : isSuccess ? (
         <div className="mx-8">
           <Form
-            onSubmit={({ title, image, body }) =>
-              create.mutateAsync({
-                title,
-                image,
-                slug: dashify(title),
-                body,
-              } as any)
-            }
-            title={title}
-            image={image}
-            body={body}
-            setTitle={setTitle}
-            setImage={setImage}
-            setBody={setBody}
+            onSubmit={({ post }) => {
+              const tags = post.tags.split(",").map((tag: string) => tag);
+              return create.mutateAsync({
+                ...post,
+                slug: dashify(post.title),
+                tags,
+              } as any);
+            }}
+            post={postValues}
+            setPost={setPost}
           />
+
+          <div className="max-w-2xl mx-auto my-20 ">
+            <Markdown code={post?.body} />
+          </div>
           <div>
             <button
               className="text-xl"

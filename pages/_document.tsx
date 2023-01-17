@@ -4,6 +4,18 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta charSet="UTF-8" />
+        <meta name="author" content="Christopher Aondona Sesugh" />
+        <meta
+          name="keywords"
+          content="JavaScript, React, Nextjs, C, python, software, programming, coding, algorithms"
+        />
+        <meta
+          name="description"
+          content="Free software development tutorials"
+        />
+
+        <link rel="apple-touch-icon" href="/assets/img4.png" />
         <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

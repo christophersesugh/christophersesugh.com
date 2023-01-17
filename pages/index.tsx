@@ -1,11 +1,21 @@
+import React from "react";
+import { useQuery } from "react-query";
 import AppHead from "components/app-head";
 import Hero from "components/hero";
 import About from "components/about";
 import Discord from "components/discord";
 import Posts from "components/posts";
 import db from "utils/db";
+import "../utils/axios";
+import axios from "axios";
 
 function HomePage({ postsData }: any) {
+  const { data } = useQuery({
+    queryKey: "posts",
+    queryFn: () => axios.get("posts").then((data) => data),
+  });
+  console.log(data);
+
   return (
     <>
       <AppHead title="Christopher A. Sesugh" />

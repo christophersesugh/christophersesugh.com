@@ -4,10 +4,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { darcula } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import { useTheme } from "utils/hooks/use-theme";
 
 export default function Markdown({ code }: any) {
-  const [, darkMode] = useTheme();
   return (
     <div className="view text-lg dark:text-slate-400">
       <ReactMarkdown

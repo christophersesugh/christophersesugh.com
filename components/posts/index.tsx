@@ -13,7 +13,7 @@ export default function Posts({ posts }: any) {
           <span className="text-slate-400">Recommended for you.</span>
         </h2>
         <Link href="/blog">
-          <button className="text-2xl font-extrabold">
+          <button className="text-2xl font-extrabold mb-4">
             See the full Blog{" "}
             <span className="border-2 rounded-full p-4 ml-4 hover:border-slate-400 ">
               <BsArrowRight className="inline text-3xl" />

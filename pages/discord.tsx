@@ -4,7 +4,7 @@ import AppHead from "components/app-head";
 export default function Discord() {
   return (
     <>
-      <AppHead title="Discord | CSA" />
+      <AppHead title="Discord | CAS" />
       discord
     </>
   );

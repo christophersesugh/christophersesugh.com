@@ -13,8 +13,7 @@ export default function Sitemap() {
 
 const items = [
   { name: "Home", link: "/" },
-  { name: "Blog", link: "/posts" },
+  { name: "Blog", link: "/blog" },
   { name: "Discord", link: "/discord" },
   { name: "About", link: "/about" },
-  { name: "Sitemap", link: "#" },
 ];

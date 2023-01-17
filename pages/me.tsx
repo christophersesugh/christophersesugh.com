@@ -1,5 +1,11 @@
+import AppHead from "components/app-head";
 import React from "react";
 
 export default function Me() {
-  return <div>me</div>;
+  return (
+    <>
+      <AppHead title="Profile | CAS" />
+      me
+    </>
+  );
 }

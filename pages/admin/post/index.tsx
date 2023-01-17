@@ -7,16 +7,20 @@ import AppHead from "components/app-head";
 import Form from "../components/form";
 
 export default function Post() {
-  const [title, setTitle] = React.useState("");
-  const [image, setImage] = React.useState("");
-  const [body, setBody] = React.useState(``);
+  const [post, setPost] = React.useState({
+    title: "",
+    image: "",
+    tags: "",
+    body: ``,
+  });
+  const queryClient = useQueryClient();
+
   const create = useMutation({
     mutationFn: (post) => {
       return axios.post("/api/post", post);
     },
     onSuccess: () => queryClient.invalidateQueries("posts"),
   });
-  const queryClient = useQueryClient();
 
   return (
     <>
@@ -24,23 +28,19 @@ export default function Post() {
       <section className="max-w-4xl mx-auto">
         <h1 className="text-center text-3xl">Create a blog post</h1>
         <Form
-          onSubmit={({ title, image, body }) =>
-            create.mutateAsync({
-              title,
-              image,
-              slug: dashify(title),
-              body,
-            } as any)
-          }
-          title={title}
-          image={image}
-          body={body}
-          setTitle={setTitle}
-          setImage={setImage}
-          setBody={setBody}
+          onSubmit={({ post }) => {
+            const tags = post.tags.split(",").map((tag: string) => tag);
+            return create.mutateAsync({
+              ...post,
+              slug: dashify(post.title),
+              tags,
+            } as any);
+          }}
+          post={post}
+          setPost={setPost}
         />
-        <div className="max-w-2xl mx-auto font-['DM_Mono'] view my-20 dark:text-slate-200">
-          <Markdown code={body} />
+        <div className="max-w-2xl mx-auto my-20 ">
+          <Markdown code={post.body} />
         </div>
       </section>
     </>

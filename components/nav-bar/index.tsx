@@ -16,6 +16,10 @@ export default function Navbar() {
 
 export const navItems = [
   {
+    name: "home",
+    link: "/",
+  },
+  {
     name: "blog",
     link: "/blog",
   },

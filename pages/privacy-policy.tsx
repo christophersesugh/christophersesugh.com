@@ -1,5 +1,11 @@
 import React from "react";
+import AppHead from "components/app-head";
 
 export default function PrivacyPolicy() {
-  return <div>privacy-policy</div>;
+  return (
+    <>
+      <AppHead title="Privacy Policy | CAS" />
+      privacy-policy
+    </>
+  );
 }

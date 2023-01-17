@@ -5,7 +5,6 @@ import AppHead from "components/app-head";
 export default function ErrorFallback({ error, resetErrorBoundary }: any) {
   return (
     <>
-      <AppHead title="Error | CAS" />
       <section
         className="max-w-4xl mx-auto pt-12 flex flex-col justify-center items-center"
         role="alert"
