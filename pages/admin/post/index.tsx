@@ -4,7 +4,18 @@ import axios from "axios";
 import dashify from "dashify";
 import Markdown from "components/markdown";
 import AppHead from "components/app-head";
-import Form from "../components/form";
+import { Form } from "components/admin";
+
+type PostProps = {
+  title: string;
+  image: string;
+  tags: string;
+  body: string;
+};
+
+type OnSubmitProps = {
+  post: PostProps;
+};
 
 export default function Post() {
   const [post, setPost] = React.useState({
@@ -28,12 +39,12 @@ export default function Post() {
       <section className="max-w-4xl mx-auto">
         <h1 className="text-center text-3xl">Create a blog post</h1>
         <Form
-          onSubmit={({ post }) => {
+          onSubmit={({ post }: OnSubmitProps) => {
             const tags = post.tags.split(",").map((tag: string) => tag);
             return create.mutateAsync({
               ...post,
               slug: dashify(post.title),
-              tags,
+              tags: tags,
             } as any);
           }}
           post={post}

@@ -2,12 +2,23 @@ import React from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import AppHead from "components/app-head";
-import Form from "../components/form";
+import { Form } from "components/admin";
 import { useAsync } from "utils/hooks/use-async";
 import { isError, useMutation, useQueryClient } from "react-query";
 import dashify from "dashify";
 import LoadingIndicator from "components/loading-indicator";
 import Markdown from "components/markdown";
+
+type PostProps = {
+  title: string;
+  image: string;
+  tags: string;
+  body: string;
+};
+
+type OnSubmitProps = {
+  post: PostProps;
+};
 
 export default function EditPost() {
   const {
@@ -68,7 +79,7 @@ export default function EditPost() {
       ) : isSuccess ? (
         <div className="mx-8">
           <Form
-            onSubmit={({ post }) => {
+            onSubmit={({ post }: OnSubmitProps) => {
               const tags = post.tags.split(",").map((tag: string) => tag);
               return create.mutateAsync({
                 ...post,

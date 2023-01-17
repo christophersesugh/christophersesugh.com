@@ -3,13 +3,15 @@ import { useAsync } from "utils/hooks/use-async";
 import FormInput from "./form-input";
 import TextArea from "./text-area";
 
+type PostProps = {
+  title: string;
+  image: string;
+  tags: string;
+  body: string;
+};
+
 type OnSubmitProps = {
-  post: {
-    title: string;
-    image: string;
-    tags: string;
-    body: string;
-  };
+  post: PostProps;
 };
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -20,16 +22,11 @@ interface PostFormElements extends HTMLFormElement {
 }
 interface FormProps {
   onSubmit: ({ post }: OnSubmitProps) => void;
-  post: {
-    title: string;
-    image: string;
-    tags: string;
-    body: string;
-  };
+  post: PostProps;
   setPost: (post: any) => void;
 }
 
-export default function Form({ onSubmit, post, setPost }: FormProps) {
+export function Form({ onSubmit, post, setPost }: FormProps) {
   const { run, error, reset, isError, isLoading, isSuccess } = useAsync();
 
   function handleFormChange(event: any) {
