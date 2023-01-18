@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { readingTime } from "reading-time-estimator";
+import readingTime from "reading-time";
 
 type PostCardProps = {
   post: {
@@ -14,7 +14,7 @@ type PostCardProps = {
 };
 
 export default function PostCard({ post }: PostCardProps) {
-  const result = readingTime(post?.body, 238, "en");
+  const result = readingTime(post?.body);
 
   return (
     <Link href={`/blog/${post.slug}`}>
