@@ -36,7 +36,7 @@ export default function Post({ post }: any) {
               {new Date(post?.createdAt)
                 .toUTCString()
                 .substring(0, post?.createdAt.length - 8)}
-              {"  "}- {result.text}
+              {"  "}- {result?.text}
             </h2>
             <div>
               {post?.tags.map((tag: string) => (
