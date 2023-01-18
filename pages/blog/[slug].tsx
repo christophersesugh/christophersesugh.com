@@ -11,7 +11,7 @@ import { client } from "utils/api-client";
 
 export default function Post({ post }: any) {
   const router = useRouter();
-  const result = readingTime(post?.body, 238, "en");
+  // const result = readingTime(post?.body, 238, "en");
   if (router.isFallback) {
     return <p>Loading..</p>;
   }
@@ -36,7 +36,8 @@ export default function Post({ post }: any) {
               {new Date(post?.createdAt)
                 .toUTCString()
                 .substring(0, post?.createdAt.length - 8)}
-              {"  "}- {result?.text}
+              {"  "}
+              {/* - {result?.text} */}
             </h2>
             <div>
               {post?.tags.map((tag: string) => (
