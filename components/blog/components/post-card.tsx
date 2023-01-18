@@ -8,6 +8,7 @@ type PostCardProps = {
     title: string;
     image: string;
     slug: string;
+    tags: [string];
     body: string;
   };
 };

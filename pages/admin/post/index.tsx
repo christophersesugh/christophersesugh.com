@@ -1,10 +1,10 @@
 import React from "react";
 import { useMutation, useQueryClient } from "react-query";
-import axios from "axios";
 import dashify from "dashify";
 import Markdown from "components/markdown";
 import AppHead from "components/app-head";
 import { Form } from "components/admin";
+import { client } from "utils/api-client";
 
 type PostProps = {
   title: string;
@@ -27,8 +27,8 @@ export default function Post() {
   const queryClient = useQueryClient();
 
   const create = useMutation({
-    mutationFn: (post) => {
-      return axios.post("/api/post", post);
+    mutationFn: (post: any) => {
+      return client("posts", { data: post } as any);
     },
     onSuccess: () => queryClient.invalidateQueries("posts"),
   });

@@ -1,37 +1,19 @@
 import React from "react";
-import { useQuery } from "react-query";
 import AppHead from "components/app-head";
 import Hero from "components/hero";
 import About from "components/about";
 import Discord from "components/discord";
-import Posts from "components/posts";
-import db from "utils/db";
-import "../utils/axios";
-import axios from "axios";
+import { Posts } from "components/blog";
+import { client } from "utils/api-client";
 
-let config = {
-  url: "posts",
-  method: "get",
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "*",
-    "Access-Control-Allow-Credentials": "true",
-  },
-};
-function HomePage({ postsData }: any) {
-  const { data } = useQuery({
-    queryKey: "posts",
-    queryFn: () => axios(config).then((data) => data),
-  });
-  console.log(data);
-
+function HomePage({ posts }: any) {
   return (
     <>
       <AppHead title="Christopher A. Sesugh" />
       <Hero />
       <About />
       <Discord />
-      <Posts posts={postsData} />
+      <Posts posts={posts} />
     </>
   );
 }
@@ -39,17 +21,13 @@ function HomePage({ postsData }: any) {
 export default HomePage;
 
 export const getStaticProps = async () => {
-  const posts = await db
-    .collection("posts")
-    .orderBy("createdAt", "desc")
-    .limit(3)
-    .get();
-  const postsData = posts.docs.map((post) => ({
-    id: post.id,
-    ...post.data(),
-  }));
+  const posts = await getPosts();
   return {
-    props: { postsData },
-    revalidate: 10,
+    props: { posts },
   };
 };
+
+async function getPosts() {
+  const posts = await client(`posts?limit=${3}`);
+  return posts.posts;
+}

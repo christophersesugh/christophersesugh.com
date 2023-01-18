@@ -1,13 +1,12 @@
 import React from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
 import AppHead from "components/app-head";
 import { Form } from "components/admin";
-import { useAsync } from "utils/hooks/use-async";
-import { isError, useMutation, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import dashify from "dashify";
 import LoadingIndicator from "components/loading-indicator";
 import Markdown from "components/markdown";
+import { client } from "utils/api-client";
 
 type PostProps = {
   title: string;
@@ -21,15 +20,6 @@ type OnSubmitProps = {
 };
 
 export default function EditPost() {
-  const {
-    run,
-    data: post,
-    isSuccess,
-    isLoading,
-    error,
-    isError,
-    isIdle,
-  } = useAsync();
   const [postValues, setPost] = React.useState({
     title: "",
     image: "",
@@ -37,45 +27,48 @@ export default function EditPost() {
     body: "",
   });
   const router = useRouter();
-  const { id } = router.query;
 
   const create = useMutation({
-    mutationFn: (post) => {
-      return axios.patch(`/api/post/${id}`, post);
+    mutationFn: (post: any) => {
+      return client(`posts/${post.id}`, { post } as any);
     },
-    onSuccess: () => queryClient.invalidateQueries("posts"),
+    onSuccess: () => queryClient.invalidateQueries(["posts"]),
   });
 
   const deletePost = useMutation({
     mutationFn: ({ id }: { id: string }) => {
-      return axios.delete(`/api/post/${id}`);
+      return client(`posts/${id}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries("posts");
+      queryClient.invalidateQueries(["posts"]);
       router.back();
     },
   });
 
+  const { id } = router.query;
+
   const queryClient = useQueryClient();
-
-  React.useEffect(() => {
-    async function fetch() {
-      if (id) {
-        return await axios
-          .get(`/api/post/${id}`)
-          .then((data) => setPost({ ...data?.data?.post }));
-      }
-    }
-    run(fetch());
-  }, [id, post?.data?.post, run]);
-
+  const {
+    data: post,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["posts"],
+    queryFn: () =>
+      client(`posts/${id}`).then((data: any) => {
+        setPost({ ...data?.post } as any);
+        return data.post;
+      }),
+  });
   return (
     <>
       <AppHead title={`Edit post | CSA`} />
-      {isLoading || isIdle ? (
+      {isLoading ? (
         <LoadingIndicator path={router.asPath} />
       ) : isError ? (
-        <p>{error.message}</p>
+        <p>{error as any}</p>
       ) : isSuccess ? (
         <div className="mx-8">
           <Form
@@ -90,17 +83,8 @@ export default function EditPost() {
             post={postValues}
             setPost={setPost}
           />
-
           <div className="max-w-2xl mx-auto my-20 ">
             <Markdown code={post?.body} />
-          </div>
-          <div>
-            <button
-              className="text-xl"
-              onClick={() => deletePost.mutate({ id } as any)}
-            >
-              delete post
-            </button>
           </div>
         </div>
       ) : null}

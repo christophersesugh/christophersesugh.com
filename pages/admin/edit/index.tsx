@@ -1,22 +1,20 @@
 import React from "react";
-import axios from "axios";
 import { useQuery } from "react-query";
 import { useRouter } from "next/router";
 import AppHead from "components/app-head";
-import { useAsync } from "utils/hooks/use-async";
 import Link from "next/link";
 import LoadingIndicator from "components/loading-indicator";
+import { client } from "utils/api-client";
 
 export default function Edit() {
-  const { run, isSuccess, isLoading } = useAsync();
-  const router = useRouter();
-  async function fetch(endpoint: any) {
-    return await run(axios.get(endpoint));
-  }
-
-  const posts = useQuery({
+  const {
+    data: posts,
+    isSuccess,
+    isLoading,
+    isFetched,
+  } = useQuery({
     queryKey: ["posts"],
-    queryFn: () => fetch("/api/posts"),
+    queryFn: () => client(`posts`).then((data) => data?.posts),
   });
 
   return (
@@ -25,9 +23,9 @@ export default function Edit() {
       <h1>Entries</h1>
       {isSuccess ? (
         <>
-          {posts?.data?.data?.posts.map((post: any) => (
-            <div key={post.id}>
-              <Link href={`/admin/edit/${post.id}`}>
+          {posts?.map((post: any) => (
+            <div key={post._id}>
+              <Link href={`/admin/edit/${post._id}`}>
                 <button>{post.title}</button>
               </Link>
               <br />

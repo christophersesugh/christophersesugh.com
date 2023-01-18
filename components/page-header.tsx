@@ -23,7 +23,7 @@ export default function PageHeader({
         alt="header image"
         width={400}
         height={600}
-        className={imgWidth}
+        className="w-full md:w-[60%]"
       />
       <div>
         <h1 className="text-4xl leading-normal ">

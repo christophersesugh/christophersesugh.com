@@ -48,7 +48,7 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full my-20">
+    <form onSubmit={handleSubmit} className="w-full mx-4 my-20">
       <FormInput
         value={post.title}
         type="text"
@@ -58,14 +58,14 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
       />
       <FormInput
         value={post.image}
-        type="image"
+        type="text"
         id="image"
         label="Image URL"
         onChange={handleFormChange}
       />
       <FormInput
         value={post.tags}
-        type="tags"
+        type="text"
         id="tags"
         label="Tags"
         onChange={handleFormChange}
@@ -74,7 +74,7 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
         value={post.body}
         id="body"
         label="Body"
-        rows={30}
+        rows={20}
         onChange={handleFormChange}
       />
       <button

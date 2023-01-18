@@ -37,7 +37,6 @@ export default function Hero() {
     <PageHeader
       title="Helping change the world through quality software."
       imgUrl="/assets/header.png"
-      imgWidth="w-[60%]"
     >
       <div className="flex flex-col">
         <Link href="/blog">
