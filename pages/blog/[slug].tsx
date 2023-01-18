@@ -11,13 +11,13 @@ import { client } from "utils/api-client";
 
 export default function Post({ post }: any) {
   const router = useRouter();
-  const result = readingTime(post.body, 238, "en");
+  const result = readingTime(post?.body, 238, "en");
   if (router.isFallback) {
     return <p>Loading..</p>;
   }
   return (
     <div className="my-20 max-w-2xl mx-8 md:mx-auto">
-      <AppHead title={`${post.title} | CAS`} />
+      <AppHead title={`${post?.title} | CAS`} />
       <div className="my-20">
         <Link href="/blog">
           <button className="text-xl text-bold">
@@ -29,15 +29,17 @@ export default function Post({ post }: any) {
       {post ? (
         <div>
           <div className="max-w-2xl mx-4 md:mx-auto flex flex-col justify-center">
-            <h1 className="text-4xl font-extrabold capitalize">{post.title}</h1>
+            <h1 className="text-4xl font-extrabold capitalize">
+              {post?.title}
+            </h1>
             <h2 className="text-xl text-slate-400 mt-4 mb-8">
-              {new Date(post.createdAt)
+              {new Date(post?.createdAt)
                 .toUTCString()
-                .substring(0, post.createdAt.length - 8)}
+                .substring(0, post?.createdAt.length - 8)}
               {"  "}- {result.text}
             </h2>
             <div>
-              {post.tags.map((tag: string) => (
+              {post?.tags.map((tag: string) => (
                 <span
                   key={tag}
                   className="rounded-2xl p-2 bg-zinc-500 text-slate-300 mr-4 mb-12 inline-block"
@@ -51,18 +53,18 @@ export default function Post({ post }: any) {
                 // fill
                 width={300}
                 height={300}
-                src={post.image}
-                alt={post.title}
+                src={post?.image}
+                alt={post?.title}
                 className="rounded block relative w-full mb-12"
               />
             </div>
             <div>
-              <Markdown code={post.body} />
+              <Markdown code={post?.body} />
             </div>
           </div>
         </div>
       ) : (
-        <p> no post found</p>
+        <p> post with given slug not found</p>
       )}
     </div>
   );
