@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { QueryClient, useQuery } from "react-query";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 import AppHead from "components/app-head";
 import PostCard from "components/blog/components/post-card";
 import { FaPlus } from "react-icons/fa";
@@ -9,7 +9,7 @@ import { client } from "utils/api-client";
 import LoadingIndicator from "components/blog/components/loading-indicator";
 import Loading from "components/blog/components/loading-indicator";
 
-export default function Blog(props: any) {
+export default function Blog() {
   const [query, setQuery] = React.useState("");
   const [postLimit, setPostLimit] = React.useState(2);
   const [tag, setTag] = React.useState("");
@@ -25,7 +25,6 @@ export default function Blog(props: any) {
       client(
         `posts?title=${encodeURIComponent(query)}&limit=${postLimit}&tag=${tag}`
       ).then((data) => data.posts),
-    // initialData: props.posts,
   });
 
   return (
@@ -76,9 +75,13 @@ export default function Blog(props: any) {
 }
 
 export const getStaticProps = async () => {
-  const posts = await getPosts();
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(["posts"], getPosts);
+
   return {
-    props: { posts },
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
   };
 };
 

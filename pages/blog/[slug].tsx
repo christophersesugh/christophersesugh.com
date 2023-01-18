@@ -2,16 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { dehydrate, QueryClient } from "react-query";
 import AppHead from "components/app-head";
 import Markdown from "components/markdown";
-import { readingTime } from "reading-time-estimator";
+// import { readingTime } from "reading-time-estimator";
+import readingTime from "reading-time";
 import { BsArrowLeft } from "react-icons/bs";
 import { client } from "utils/api-client";
 
 export default function Post({ post }: any) {
   const router = useRouter();
-  // const result = readingTime(post?.body, 238, "en");
+  const stats = readingTime(post?.body);
   if (router.isFallback) {
     return <p>Loading..</p>;
   }
@@ -36,8 +36,7 @@ export default function Post({ post }: any) {
               {new Date(post?.createdAt)
                 .toUTCString()
                 .substring(0, post?.createdAt.length - 8)}
-              {"  "}
-              {/* - {result?.text} */}
+              {"  "}- {stats?.text}
             </h2>
             <div>
               {post?.tags.map((tag: string) => (
@@ -86,16 +85,10 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: any) => {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(
-    ["posts"],
-    await client("posts").then((data) => data.posts)
-  );
   const { slug } = context.params;
   const post = await getPosts({ slug });
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
       post: post[0],
     },
   };
