@@ -4,14 +4,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import AppHead from "components/app-head";
 import Markdown from "components/markdown";
-// import { readingTime } from "reading-time-estimator";
 import readingTime from "reading-time";
 import { BsArrowLeft } from "react-icons/bs";
 import { client } from "utils/api-client";
 
 export default function Post({ post }: any) {
   const router = useRouter();
-  const stats = readingTime(post?.body);
+  let stats;
+  if (post) {
+    stats = readingTime(post.body);
+  }
   if (router.isFallback) {
     return <p>Loading..</p>;
   }

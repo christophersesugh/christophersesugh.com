@@ -14,7 +14,7 @@ type PostCardProps = {
 };
 
 export default function PostCard({ post }: PostCardProps) {
-  const result = readingTime(post?.body);
+  const stats = readingTime(post?.body);
 
   return (
     <Link href={`/blog/${post.slug}`}>
@@ -27,7 +27,7 @@ export default function PostCard({ post }: PostCardProps) {
           className="w-full rounded-lg"
         />
         <p className="text-xl font-extrabold text-slate-400 self-start my-4">
-          {result.text}
+          {stats?.text}
         </p>
         <h1 className="self-start text-3xl font-bold">{post?.title}</h1>
       </article>
