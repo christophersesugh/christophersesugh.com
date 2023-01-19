@@ -5,11 +5,11 @@ import Markdown from "components/markdown";
 import AppHead from "components/app-head";
 import { Form } from "components/admin";
 import { client } from "utils/api-client";
+import Link from "next/link";
 
 type PostProps = {
   title: string;
   image: string;
-  tags: string;
   body: string;
 };
 
@@ -21,7 +21,6 @@ export default function Post() {
   const [post, setPost] = React.useState({
     title: "",
     image: "",
-    tags: "",
     body: ``,
   });
   const queryClient = useQueryClient();
@@ -36,15 +35,18 @@ export default function Post() {
   return (
     <>
       <AppHead title="Create post | CSA" />
-      <section className="max-w-4xl mx-auto">
+      <section className="max-w-4xl mx-auto ">
         <h1 className="text-center text-3xl">Create a blog post</h1>
+        <Link href="/admin/dashboard">
+          <button className="text-xl rounded-lg p-4 border-2 mt-8">
+            Back to dashboard
+          </button>
+        </Link>
         <Form
           onSubmit={({ post }: OnSubmitProps) => {
-            const tags = post.tags.split(",").map((tag: string) => tag);
             return create.mutateAsync({
               ...post,
               slug: dashify(post.title),
-              tags: tags,
             } as any);
           }}
           post={post}

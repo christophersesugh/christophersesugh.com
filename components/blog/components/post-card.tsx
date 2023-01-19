@@ -18,10 +18,11 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Link href={`/blog/${post.slug}`}>
-      <article className="p-4 flex flex-col justify-center items-center">
+      <article className="p-4 flex flex-col justify-center items-center w-full ">
         <Image
+          // fill
           src={post?.image}
-          height={150}
+          height={200}
           width={200}
           alt={post?.title}
           className="w-full rounded-lg"

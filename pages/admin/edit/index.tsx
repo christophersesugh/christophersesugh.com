@@ -13,7 +13,7 @@ export default function Edit() {
     isLoading,
   } = useQuery({
     queryKey: ["posts"],
-    queryFn: () => client(`posts`).then((data) => data?.posts),
+    queryFn: () => client(`posts`).then((data) => data.posts),
   });
 
   return (
@@ -21,16 +21,20 @@ export default function Edit() {
       <AppHead title="Edit Post | CSA" />
       <h1>Entries</h1>
       {isSuccess ? (
-        <>
-          {posts?.map((post: any) => (
-            <div key={post._id}>
-              <Link href={`/admin/edit/${post._id}`}>
-                <button>{post.title}</button>
-              </Link>
-              <br />
-            </div>
-          ))}
-        </>
+        posts?.length ? (
+          <>
+            {posts?.map((post: any) => (
+              <div key={post._id}>
+                <Link href={`/admin/edit/${post._id}`}>
+                  <button>{post.title}</button>
+                </Link>
+                <br />
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No posts</p>
+        )
       ) : null}
       {isLoading ? <LoadingIndicator path="*" /> : null}
     </>

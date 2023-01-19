@@ -28,22 +28,13 @@ export function BlogSlug({ post }: any) {
             <h1 className="text-4xl font-extrabold capitalize">
               {post?.title}
             </h1>
-            <h2 className="text-xl text-slate-400 mt-4 mb-8">
+            <h2 className="text-xl text-slate-400 mt-4 mb-12">
               {new Date(post?.createdAt)
                 .toUTCString()
                 .substring(0, post?.createdAt.length - 8)}
               {"  "}- {stats?.text}
             </h2>
-            <div className="mb-12">
-              {post?.tags.map((tag: string) => (
-                <span
-                  key={tag}
-                  className="rounded-3xl p-3 bg-zinc-500 text-slate-300 mb-2 mr-4  inline-block"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+
             <div className="block w-full relative h-auto">
               <Image
                 // fill

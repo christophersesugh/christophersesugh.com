@@ -7,11 +7,12 @@ import dashify from "dashify";
 import LoadingIndicator from "components/loading-indicator";
 import Markdown from "components/markdown";
 import { client } from "utils/api-client";
+import Link from "next/link";
 
 type PostProps = {
   title: string;
   image: string;
-  tags: string;
+  tags: string[] | string;
   body: string;
 };
 
@@ -23,7 +24,6 @@ export default function EditPost() {
   const [postValues, setPost] = React.useState({
     title: "",
     image: "",
-    tags: "",
     body: "",
   });
   const router = useRouter();
@@ -32,7 +32,10 @@ export default function EditPost() {
 
   const update = useMutation({
     mutationFn: (post: any) => {
-      return client(`posts/${post.id}`, { post } as any);
+      return client(`posts/${post._id}`, {
+        data: post,
+        method: "PATCH",
+      } as any);
     },
     onSuccess: () => queryClient.invalidateQueries(["posts"]),
   });
@@ -60,13 +63,17 @@ export default function EditPost() {
         <p>{error as any}</p>
       ) : isSuccess ? (
         <div className="mx-8">
+          <h1 className="text-center text-3xl">Edit post</h1>
+          <Link href="/admin/dashboard">
+            <button className="text-xl rounded-lg p-4 border-2 mt-8">
+              Back to dashboard
+            </button>
+          </Link>
           <Form
-            onSubmit={({ post }: OnSubmitProps) => {
-              const tags = post.tags.split(",").map((tag: string) => tag);
+            onSubmit={({ post }) => {
               return update.mutateAsync({
                 ...post,
                 slug: dashify(post.title),
-                tags,
               } as any);
             }}
             post={postValues}

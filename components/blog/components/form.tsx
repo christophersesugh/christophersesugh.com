@@ -1,26 +1,11 @@
 import React from "react";
 
-export function Form({ onClick, posts, query, setQuery }: any) {
-  const { data } = posts;
-  let tags;
-
-  if (data) {
-    tags = [
-      ...new Set(
-        data?.map((post: any) => post.tags).flatMap((tag: string) => tag)
-      ),
-    ] as [string];
-  }
-
-  function handleButtonClick({ tag }: any) {
-    onClick({
-      tag,
-    });
-  }
-
+export function Form({ query, setQuery }: any) {
   return (
-    <div className="mx-4 mt-8">
-      <form className="w-full md:w-[50%] mb-40 relative ">
+    <div className=" mt-20">
+      <p className="text-lg mb-4">Search posts by Title:</p>
+
+      <form className="w-full md:w-[50%] mb-20 relative ">
         <label htmlFor="search">
           <input
             minLength={3}
@@ -34,19 +19,6 @@ export function Form({ onClick, posts, query, setQuery }: any) {
           />
         </label>
       </form>
-
-      <div className="my-8">
-        <h3 className="mb-8 text-xl font-black">Search blog by topics</h3>
-        {tags?.map((tag: string) => (
-          <button
-            onClick={() => handleButtonClick({ tag })}
-            key={tag}
-            className="rounded-3xl p-3 bg-zinc-500 text-slate-300 mb-2 mr-4  inline-block hover:outline-2 hover:outline-offset-4"
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
