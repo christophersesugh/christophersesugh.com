@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
-import PostCard from "./components/post-card";
+import { PostCard } from "./post-card";
 
 export function Posts({ posts }: any) {
   return (

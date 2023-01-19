@@ -13,7 +13,7 @@ type PostCardProps = {
   };
 };
 
-export default function PostCard({ post }: PostCardProps) {
+export function PostCard({ post }: PostCardProps) {
   const stats = readingTime(post?.body);
 
   return (

@@ -3,7 +3,7 @@ import AppHead from "components/app-head";
 import Hero from "components/hero";
 import About from "components/about";
 import Discord from "components/discord";
-import { Posts } from "components/blog";
+import { Posts } from "components/blog/components/home-posts";
 import { client } from "utils/api-client";
 
 function HomePage({ posts }: any) {
