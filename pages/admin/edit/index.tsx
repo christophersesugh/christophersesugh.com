@@ -11,7 +11,6 @@ export default function Edit() {
     data: posts,
     isSuccess,
     isLoading,
-    isFetched,
   } = useQuery({
     queryKey: ["posts"],
     queryFn: () => client(`posts`).then((data) => data?.posts),

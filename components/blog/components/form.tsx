@@ -30,7 +30,7 @@ export function Form({ onClick, posts, query, setQuery }: any) {
             id="search"
             placeholder="Search posts"
             onChange={(e) => setQuery(e.currentTarget.value)}
-            className="w-full border-slate-500 border-2 rounded-xl dark:border-slate-200 dark:text-slate-500 p-4  text-lg focus:outline-none"
+            className="w-full border-slate-500 border-2 rounded-xl dark:border-slate-200 dark:text-slate-500 p-4 text-lg focus:outline-none"
           />
         </label>
       </form>

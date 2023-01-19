@@ -27,27 +27,16 @@ export default function EditPost() {
     body: "",
   });
   const router = useRouter();
+  const queryClient = useQueryClient();
+  const { id } = router.query;
 
-  const create = useMutation({
+  const update = useMutation({
     mutationFn: (post: any) => {
       return client(`posts/${post.id}`, { post } as any);
     },
     onSuccess: () => queryClient.invalidateQueries(["posts"]),
   });
 
-  const deletePost = useMutation({
-    mutationFn: ({ id }: { id: string }) => {
-      return client(`posts/${id}`);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(["posts"]);
-      router.back();
-    },
-  });
-
-  const { id } = router.query;
-
-  const queryClient = useQueryClient();
   const {
     data: post,
     isLoading,
@@ -74,7 +63,7 @@ export default function EditPost() {
           <Form
             onSubmit={({ post }: OnSubmitProps) => {
               const tags = post.tags.split(",").map((tag: string) => tag);
-              return create.mutateAsync({
+              return update.mutateAsync({
                 ...post,
                 slug: dashify(post.title),
                 tags,
