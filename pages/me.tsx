@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import AppHead from "components/app-head";
 import PageHeader from "components/page-header";
 import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Me() {
   const router = useRouter();
@@ -27,38 +29,30 @@ export default function Me() {
           />
         }
         title="Your profile."
-        subtitle="You can edit your profile or connect to our discord server to intereact with like minded people."
+        subtitle="You can connect to our discord server using the button bewlow or log out by clicking the logout button"
       >
         <div className="mt-12 w-full md:w-[50%]">
+          <button className="rounded-lg p-2 bg-blue-500 text-slate-200 mt-8">
+            Log out <FaArrowRight className="inline ml-4" />
+          </button>
+          <br />
+          <Link href="/admin/dashboard">
+            <button className="rounded-lg p-2 bg-blue-500 text-slate-200 my-8">
+              Dashboard
+            </button>
+          </Link>
           <ul>
             <li className="rounded-lg bg-zinc-300">
-              <span className="bg-zinc-500 h-full inline-block p-2 rounded-lg text-slate-300">
-                Email:
-              </span>
-              <span className="p-2 text-zinc-600">
-                christohybrid185@gmail.com
-              </span>
+              <p>
+                <span className="bg-zinc-500 h-full inline-block p-2 rounded-lg text-slate-300">
+                  Email:
+                </span>
+                <span className="p-2 text-zinc-600">
+                  christohybrid185@gmail.com
+                </span>
+              </p>
             </li>
-            <li className="text-lg text-zinc-400 mt-8">
-              <form>
-                <label htmlFor="password" className="text-sm">
-                  Change your password
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Password"
-                  id="password"
-                  className="w-full p-2 text-slate-200 rounded-lg outline-none bg-slate-400 placeholder-slate-200"
-                />
-                <button
-                  type="submit"
-                  className="text-blue-400 border-2 p-2 rounded-lg mt-4"
-                >
-                  Save
-                </button>
-              </form>
-            </li>
+
             <li className="text-lg text-zinc-400 mt-8">
               <button className="underline">Connect to Discord</button>
             </li>
