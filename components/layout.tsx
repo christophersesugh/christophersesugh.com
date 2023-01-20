@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { QueryClientProvider, Hydrate, QueryClient } from "react-query";
 import { ErrorBoundary } from "react-error-boundary";
+import { AnalyticsWrapper } from "./analytics-wrapper";
 import Footer from "./footer";
 import Navbar from "./nav-bar";
 import ErrorFallback from "pages/error-fallback";
@@ -40,6 +41,7 @@ export default function Layout({
           <Hydrate state={pageProps.dehydratedState}>
             <Navbar />
             {children}
+            <AnalyticsWrapper />
             <Footer />
           </Hydrate>
         </QueryClientProvider>
