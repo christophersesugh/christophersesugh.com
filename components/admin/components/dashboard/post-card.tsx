@@ -8,7 +8,7 @@ export function PostCard({ post }: any) {
 
   const deletePost = useMutation({
     mutationFn: ({ id }: { id: string }) => {
-      return client(`posts/${id}`, { method: "DELETE" } as any) as any;
+      return client(`posts/${id}`, { method: "DELETE" } as any);
     },
     onSettled: () => {
       queryClient.invalidateQueries(["posts"]);
