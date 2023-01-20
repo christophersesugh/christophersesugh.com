@@ -26,16 +26,14 @@ export default function PageHeader({
         height={600}
         className="w-full md:w-[60%]"
       />
-      <Slide direction="left" damping={0.1}>
-        <div>
-          <h1 className="text-4xl leading-normal ">
-            {title}
-            <br />
-            <span className="mt-4 text-slate-400">{subtitle}</span>
-          </h1>
-          {children}
-        </div>
-      </Slide>
+      <div>
+        <h1 className="text-4xl leading-normal ">
+          {title}
+          <br />
+          <span className="mt-4 text-slate-400">{subtitle}</span>
+        </h1>
+        {children}
+      </div>
     </header>
   );
 }

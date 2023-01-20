@@ -2,7 +2,7 @@ import React from "react";
 
 export function Form({ query, setQuery }: any) {
   return (
-    <div className=" mt-20">
+    <div className="mt-20 px-4">
       <p className="text-lg mb-4">Search posts by Title:</p>
 
       <form className="w-full md:w-[50%] mb-20 relative ">

@@ -19,7 +19,7 @@ export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
     <nav className="max-w-8xl mx-auto transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
       <Link href="/">
         {/* <Slide direction="left" cascade> */}
-        <span className="text-2xl font-black text-bold hover:underline underline-offset-8">
+        <span className="text-2xl font-black text-bold hover:underline underline-offset-8 mr-4 md:mr-0">
           <Fade cascade duration={200}>
             Christopher A. Sesugh
           </Fade>

@@ -23,7 +23,7 @@ export default function Blog() {
       <AppHead title="Blog | CAS" />
       <BlogHeader />
       <div className="mb-40 mx-auto max-w-4xl flex flex-col ">
-        <Fade cascade>
+        <Fade cascade duration={300}>
           <Form query={query} setQuery={setQuery} />
           <BlogCards postsData={posts} queried={queried} />
           <LoadMore
