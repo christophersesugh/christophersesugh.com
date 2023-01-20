@@ -12,7 +12,7 @@ function HomePage({ posts }: any) {
   return (
     <>
       <AppHead title="Christopher A. Sesugh" />
-      <Fade cascade duration={3000}>
+      <Fade cascade duration={1000}>
         <Hero />
       </Fade>
       <Fade cascade duration={2000}>
