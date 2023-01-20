@@ -15,6 +15,7 @@ type MainNavProps = {
 
 export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
   const [toggleThemeMode, darkMode] = useTheme();
+  let user = true;
   return (
     <nav className="max-w-8xl mx-auto transition ease-in duration-300 flex justify-between px-8 py-12 items-center">
       <Link href="/">
@@ -64,12 +65,14 @@ export default function MainNav({ isOpen, setIsOpen }: MainNavProps) {
               <BsSun className="text-3xl" />
             )}
           </NavButton>
-          <NavButton
-            className="rounded-full border-2 p-2 hover:border-black dark:hover:border-slate-500
+          <Link href={user ? "/me" : "/login"}>
+            <NavButton
+              className="rounded-full border-2 p-2 hover:border-black dark:hover:border-slate-500
         "
-          >
-            <BsPersonCircle className="text-3xl" />
-          </NavButton>
+            >
+              <BsPersonCircle className="text-3xl" />
+            </NavButton>
+          </Link>
         </div>
       </Slide>
     </nav>

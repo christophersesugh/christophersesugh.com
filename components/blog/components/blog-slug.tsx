@@ -51,7 +51,7 @@ export function BlogSlug({ post }: any) {
           </div>
         </div>
       ) : (
-        <p> post with given slug not found</p>
+        <p className="text-xl"> post with given slug not found</p>
       )}
     </div>
   );

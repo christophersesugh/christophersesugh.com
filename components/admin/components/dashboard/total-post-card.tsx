@@ -1,9 +1,16 @@
 import React from "react";
 
-export function TotalPosts() {
+export function TotalPosts({ posts, isSuccess }: any) {
   return (
-    <div className="w-[50%] rounded-lg p-12 border-2 text-center">
-      <p className="text-4xl">50 posts</p>
+    <div className="w-full md:w-[50%] rounded-lg p-12 border-2 text-center">
+      {isSuccess ? (
+        <>
+          <p className="text-6xl">{posts?.length} </p>
+          <span>posts</span>
+        </>
+      ) : (
+        <p>0 posts</p>
+      )}
     </div>
   );
 }

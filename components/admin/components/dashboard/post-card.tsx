@@ -18,7 +18,7 @@ export function PostCard({ post }: any) {
 
   return (
     <Link href={`/post/${post.slug}`}>
-      <div className="bg-slate-400 p-4 rounded-lg">
+      <div className="bg-slate-400 p-4 rounded-lg text-slate-200">
         <div className="flex justify-between gap-4">
           <p className="text-xl">{post.title}</p>
           <p className="text-md">

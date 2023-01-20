@@ -8,7 +8,15 @@ export default function Hero() {
   return (
     <PageHeader
       title="Helping change the world through quality software."
-      imgUrl="/assets/header.png"
+      headerImage={
+        <Image
+          src="/assets/header.png"
+          width={300}
+          height={200}
+          alt="login"
+          className="self-start rounded-xl w-full md:w-[80%]"
+        />
+      }
     >
       <div className="flex flex-col">
         <Link href="/blog">

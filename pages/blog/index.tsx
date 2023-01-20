@@ -19,7 +19,7 @@ export default function Blog() {
   });
 
   return (
-    <Fade cascade>
+    <Fade cascade duration={1000}>
       <AppHead title="Blog | CAS" />
       <BlogHeader />
       <div className="mb-40 mx-auto max-w-4xl flex flex-col ">

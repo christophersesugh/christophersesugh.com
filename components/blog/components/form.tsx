@@ -5,7 +5,7 @@ export function Form({ query, setQuery }: any) {
     <div className="mt-20 px-4">
       <p className="text-lg mb-4">Search posts by Title:</p>
 
-      <form className="w-full md:w-[50%] mb-20 relative ">
+      <form className="w-full md:w-[50%] mb-20 ">
         <label htmlFor="search">
           <input
             minLength={3}
