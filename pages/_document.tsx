@@ -31,6 +31,13 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
         />
+
+        <script
+          src="//a.mailmunch.co/app/v1/site.js"
+          id="mailmunch-script"
+          data-mailmunch-site-id="1022215"
+          async={true}
+        ></script>
       </Head>
       <body className="dark:bg-[#1f2028] dark:text-[#fff] bg-[#fff] text-[#1f2028] transition-all duration-300">
         <Main />

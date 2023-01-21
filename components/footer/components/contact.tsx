@@ -11,7 +11,4 @@ export default function Contact() {
   );
 }
 
-const items = [
-  { name: "Email Chris", link: "/contact" },
-  { name: "Book a Call", link: "/contact#book-a-call" },
-];
+const items = [{ name: "Email Chris", link: "/contact" }];

@@ -17,13 +17,7 @@ export default function PageHeader({
   return (
     <header className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row-reverse max-w-6xl mx-auto mt-12 mb-40 -z-50">
       {headerImage}
-      {/* <Image
-        src={imgUrl}
-        alt="header image"
-        width={400}
-        height={600}
-        className={`${className} w-full md:w-[60%] rounded-xl self-start`}
-      /> */}
+
       <div>
         <h1 className="text-4xl leading-normal ">
           {title}

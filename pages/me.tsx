@@ -29,7 +29,7 @@ export default function Me() {
           />
         }
         title="Your profile."
-        subtitle="You can connect to our discord server using the button bewlow or log out by clicking the logout button"
+        subtitle="You can connect to our discord server using the button below or log out by clicking the logout button"
       >
         <div className="mt-12 w-full md:w-[50%]">
           <button className="rounded-lg p-2 bg-blue-500 text-slate-200 mt-8">
@@ -43,13 +43,9 @@ export default function Me() {
           </Link>
           <ul>
             <li className="rounded-lg bg-zinc-300">
-              <p>
-                <span className="bg-zinc-500 h-full inline-block p-2 rounded-lg text-slate-300">
-                  Email:
-                </span>
-                <span className="p-2 text-zinc-600">
-                  christohybrid185@gmail.com
-                </span>
+              <p className="p-4 text-xl text-zinc-600">
+                christohybrid185@gmail.com
+                <span className="p-2 text-zinc-600"></span>
               </p>
             </li>
 

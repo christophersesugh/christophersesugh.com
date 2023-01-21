@@ -5,7 +5,7 @@ import { PostCard } from "./post-card";
 
 export function Posts({ posts }: any) {
   return (
-    <section className="mb-40 mx-8">
+    <section className="mb-40 mx-8 max-w-5xl md:mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between mx-4">
         <h2 className="text-4xl  mb-8">
           Blog recommendations

@@ -46,6 +46,9 @@ export function PostCard({ post }: any) {
               "Delete"
             )}
           </button>
+          <Link href={`/blog/${post.slug}`}>
+            <button className="rounded-md bg-zinc-700 p-2">View</button>
+          </Link>
           <Link href={`/admin/edit/${post._id}`}>
             <button className="rounded-md bg-blue-700 p-2">Edit</button>
           </Link>
