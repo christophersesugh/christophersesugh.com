@@ -41,9 +41,9 @@ export default function Discord() {
           <p className="mb-4">
             Joining our Discord server allows you to connect with other people
             who have a passion for programming, which can be a great way to make
-            friends and build connections with others in the field. I will
-            continue to contribute and provide help to people who need it on the
-            server.
+            friends and build connections with others in the field. I
+            Christopher, will continue to contribute and provide help to people
+            who need it on the server.
           </p>
           <h2 className="text-2xl text-slate-800 dark:text-slate-100 my-6">
             Help with coding problems
@@ -65,7 +65,7 @@ export default function Discord() {
             Job opportunities
           </h2>
           <p className="mb-4">
-            SOur Discord server also have a channel where members can post job
+            Our Discord server also have a channel where members can post job
             listings or ask for help finding work.
           </p>
           <h2 className="text-2xl text-slate-800 dark:text-slate-100 my-6">

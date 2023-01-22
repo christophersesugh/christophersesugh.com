@@ -28,7 +28,7 @@ export default function About() {
           <p className="mb-4">
             I am a highly motivated and skilled professional with a passion for
             excellence. With a diverse background in fullstack web development,
-            I brings a unique perspective and a wealth of knowledge to every
+            I bring a unique perspective and a wealth of knowledge to every
             project I undertake.
           </p>
           <p className="mb-4">
@@ -47,13 +47,13 @@ export default function About() {
             satisfaction.
           </p>
           <p className="mb-4">
-            If {'you"re '}looking for a dedicated and highly skilled
+            If {"you're"} looking for a dedicated and highly skilled
             professional to help you achieve your goals, look no further than
-            than contacting me.
+            contacting me.
           </p>
           <p>
             Skills:{" "}
-            <span className="text-slate-800 dark:text-slate-50 text-xl">
+            <span className="text-slate-700 dark:text-slate-50 text-xl">
               HTML, CSS, JavaScript, Typescript, Reactjs, Nextjs, Tailwind CSS,
               Material UI, Jest, Nodejs, Expressjs, MongoDB, DevOps, Git.
             </span>

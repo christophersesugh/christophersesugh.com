@@ -5,6 +5,7 @@
 body {
   font-family: "Roboto", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 code {
@@ -51,4 +52,8 @@ code {
 
 .view h2 {
   font-size: 1.4em;
+}
+
+.privacy-policy {
+  list-style-type: square;
 }

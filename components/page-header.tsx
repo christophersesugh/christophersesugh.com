@@ -15,7 +15,7 @@ export default function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <header className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row-reverse max-w-6xl mx-auto mt-12 mb-40 -z-50">
+    <header className="md:px-16 mx-8 flex flex-col justify-center items-center gap-12 md:flex-row-reverse max-w-6xl md:mx-auto mt-12 mb-40 -z-50">
       {headerImage}
 
       <div>

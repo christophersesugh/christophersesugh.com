@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Title from "./title";
 import List from "./list";
 
@@ -13,7 +12,7 @@ export default function General() {
 }
 
 const items = [
-  { name: "My Mission", link: "/mission" },
-  { name: "Privacy policy", link: "/privacy-policy" },
-  { name: "Terms of use", link: "/terms-of-use" },
+  { name: "My Mission", link: "/transparency#mission" },
+  { name: "Privacy policy", link: "/transparency" },
+  { name: "Terms of use", link: "/transparency#terms-of-use" },
 ];
