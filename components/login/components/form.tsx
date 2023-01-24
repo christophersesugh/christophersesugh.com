@@ -41,7 +41,7 @@ export function Form({ registered, onSubmit }: FormProps) {
   }
 
   React.useEffect(() => {
-    if (isSuccess && user) {
+    if (isSuccess) {
       router.push("/me");
     }
   }, [isSuccess, router, user]);
