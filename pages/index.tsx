@@ -22,11 +22,6 @@ function HomePage({ posts }: any) {
         <Discord />
       </Fade>
       <Posts posts={posts} />
-      <Link href="/admin/dashboard">
-        <button className="fixed right-12 bottom-12 p-6 bg-slate-300 rounded-full">
-          +
-        </button>
-      </Link>
     </>
   );
 }
