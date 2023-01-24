@@ -12,7 +12,7 @@ export default function Dashboard() {
   const [query, setQuery] = React.useState("");
   const [limit, setLimit] = React.useState(8);
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   const {
     data: posts,
@@ -47,7 +47,10 @@ export default function Dashboard() {
               Profile
             </button>
           </Link>
-          <button className="border-2 rounded-lg self-start p-2">
+          <button
+            onClick={logout}
+            className="border-2 rounded-lg self-start p-2"
+          >
             Log out
             <FaArrowRight className="inline ml-4" />
           </button>

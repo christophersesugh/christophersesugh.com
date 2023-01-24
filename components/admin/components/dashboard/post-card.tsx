@@ -23,7 +23,7 @@ export function PostCard({ post }: any) {
   return (
     <div className="bg-slate-400 p-4 rounded-lg text-slate-200">
       <div className="flex justify-between gap-4">
-        <p className="text-xl">{post.title}</p>
+        <p className="text-lg">{post.title}</p>
         <p className="text-md">
           {new Date(post.createdAt)
             .toUTCString()

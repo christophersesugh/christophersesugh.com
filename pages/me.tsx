@@ -15,9 +15,8 @@ type UserInfoProps = {
 
 export default function Me() {
   const { user, logout } = useAuth();
-  console.log(user);
-
   const router = useRouter();
+
   React.useLayoutEffect(() => {
     if (!user || user === null) {
       router.push("/login");

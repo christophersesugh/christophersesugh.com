@@ -23,8 +23,6 @@ async function getToken() {
 }
 
 function handleUserResponse({ user }: UserProps) {
-  console.log(user);
-
   window.localStorage.setItem(localStorageKey, user.token);
   return user;
 }
