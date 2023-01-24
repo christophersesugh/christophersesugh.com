@@ -41,8 +41,7 @@ async function logout() {
 
 // an auth provider wouldn't use your client, they'd have their own
 // so that's why we're not just re-using the client
-const authURL =
-  process.env.NEXT_PUBLIC_AUTH_URL || "https://cas.cyclic.app/auth";
+const authURL = process.env.NEXT_PUBLIC_AUTH_URL;
 async function client(endpoint: string, data: any) {
   const config = {
     method: "POST",
