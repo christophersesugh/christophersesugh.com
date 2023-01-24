@@ -46,13 +46,11 @@ export default function Me() {
             </button>
           </Link>
           <ul>
-            <li className="rounded-lg bg-zinc-300">
-              <p className="p-4 text-xl text-zinc-600">
-                {user ? user.email : null}
-                <span className="p-2 text-zinc-600"></span>
-              </p>
-            </li>
-
+            {user ? (
+              <li className="rounded-lg bg-zinc-300">
+                <p className="p-4 text-xl text-zinc-600">{user.email}</p>
+              </li>
+            ) : null}
             <li className="text-lg text-zinc-400 mt-8">
               <button className="underline">Connect to Discord</button>
             </li>
