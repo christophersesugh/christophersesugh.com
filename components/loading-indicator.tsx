@@ -35,7 +35,7 @@ export function LoadingIndicator({ path }: { path: string }) {
 
 export function FullPageSpinner() {
   return (
-    <div className="h-screen w-screen grid justify-center items-start pt-40">
+    <div className="h-screen w-screen grid justify-center items-start pt-40 dark:bg-black text-white">
       <FaSpinner className="text-6xl animate-spin" />
     </div>
   );
