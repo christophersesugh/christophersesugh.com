@@ -6,13 +6,14 @@ import Link from "next/link";
 import { BsArrowLeft } from "react-icons/bs";
 import readingTime from "reading-time";
 
-export function BlogSlug({ post }: any) {
+export function BlogSlug({ post, relatedPosts }: any) {
   let stats;
   if (post) {
     stats = readingTime(post.body);
   }
   return (
-    <div className="my-20 max-w-2xl mx-8 md:mx-auto">
+    // <div className="my-20 max-w-2xl mx-8 md:mx-auto">
+    <>
       <AppHead title={`${post?.title} | CAS`} />
       <div className="my-20">
         <Link href="/blog">
@@ -23,36 +24,39 @@ export function BlogSlug({ post }: any) {
         </Link>
       </div>
       {post ? (
-        <div>
-          <div className="max-w-2xl mx-4 md:mx-auto flex flex-col justify-center">
-            <h1 className="text-4xl font-extrabold capitalize">
-              {post?.title}
-            </h1>
-            <h2 className="text-xl text-slate-400 mt-4 mb-12">
-              {new Date(post?.createdAt)
-                .toUTCString()
-                .substring(0, post?.createdAt.length - 8)}
-              {"  "}- {stats?.text}
-            </h2>
+        <>
+          <div>
+            <div className="max-w-2xl mx-4 md:mx-auto flex flex-col justify-center">
+              <h1 className="text-4xl font-extrabold capitalize">
+                {post?.title}
+              </h1>
+              <h2 className="text-xl text-slate-400 mt-4 mb-12">
+                {new Date(post?.createdAt)
+                  .toUTCString()
+                  .substring(0, post?.createdAt.length - 8)}
+                {"  "}- {stats?.text}
+              </h2>
 
-            <div className="block w-full relative h-auto">
-              <Image
-                // fill
-                width={300}
-                height={300}
-                src={post?.image}
-                alt={post?.title}
-                className="rounded block relative w-full mb-12"
-              />
-            </div>
-            <div>
-              <Markdown code={post?.body} />
+              <div className="block w-full relative h-auto">
+                <Image
+                  // fill
+                  width={300}
+                  height={300}
+                  src={post?.image}
+                  alt={post?.title}
+                  className="rounded block relative w-full mb-12"
+                />
+              </div>
+              <div>
+                <Markdown code={post?.body} />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       ) : (
         <p className="text-xl"> post with given slug not found</p>
       )}
-    </div>
+      {/* </div> */}
+    </>
   );
 }

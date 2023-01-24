@@ -1,14 +1,15 @@
 import React from "react";
-import { useRouter } from "next/router";
-import AppHead from "components/app-head";
-import PageHeader from "components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { useAuth } from "context/auth-context";
+import AppHead from "components/app-head";
+import PageHeader from "components/page-header";
 
 export default function Me() {
+  const { user, logout } = useAuth();
   const router = useRouter();
-  let user = true;
   React.useLayoutEffect(() => {
     if (!user || user === null) {
       router.push("/login");
@@ -32,7 +33,10 @@ export default function Me() {
         subtitle="You can connect to our discord server using the button below or log out by clicking the logout button"
       >
         <div className="mt-12 w-full md:w-[50%]">
-          <button className="rounded-lg p-2 bg-blue-500 text-slate-200 mt-8">
+          <button
+            onClick={logout}
+            className="rounded-lg p-2 bg-blue-500 text-slate-200 mt-8"
+          >
             Log out <FaArrowRight className="inline ml-4" />
           </button>
           <br />
@@ -44,7 +48,7 @@ export default function Me() {
           <ul>
             <li className="rounded-lg bg-zinc-300">
               <p className="p-4 text-xl text-zinc-600">
-                christohybrid185@gmail.com
+                {user ? user.email : null}
                 <span className="p-2 text-zinc-600"></span>
               </p>
             </li>

@@ -6,6 +6,7 @@ import TextArea from "./text-area";
 type PostProps = {
   title: string;
   image: string;
+  tag: string;
   body: string;
 };
 
@@ -60,6 +61,13 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
         type="text"
         id="image"
         label="Image URL"
+        onChange={handleFormChange}
+      />
+      <FormInput
+        value={post.tag}
+        type="text"
+        id="tag"
+        label="Tag"
         onChange={handleFormChange}
       />
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaSpinner } from "react-icons/fa";
 
-export default function LoadingIndicator({ path }: { path: string }) {
+export function LoadingIndicator({ path }: { path: string }) {
   const router = useRouter();
   React.useEffect(() => {
     const handleRouteChange = (path: any, { shallow }: any) => {
@@ -29,5 +30,13 @@ export default function LoadingIndicator({ path }: { path: string }) {
         <p>path: {path}</p>
       </div>
     </article>
+  );
+}
+
+export function FullPageSpinner() {
+  return (
+    <div className="h-screen w-screen grid justify-center items-start pt-40">
+      <FaSpinner className="text-6xl animate-spin" />
+    </div>
   );
 }

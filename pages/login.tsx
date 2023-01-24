@@ -1,12 +1,14 @@
 import React from "react";
+import Image from "next/image";
+import { useAuth } from "context/auth-context";
 import AppHead from "components/app-head";
 import PageHeader from "components/page-header";
-import Image from "next/image";
 import { Form } from "components/login";
 import { Fade } from "react-awesome-reveal";
 
 export default function Login() {
   const [registered, setRegistered] = React.useState(true);
+  const { login, register } = useAuth();
   return (
     <>
       <AppHead title="Login | CAS" />
@@ -26,7 +28,10 @@ export default function Login() {
             subtitle="Or signup for an account."
           >
             <div className=" w-full md:w-[80%] mt-12">
-              <Form registered={registered} />
+              <Form
+                onSubmit={registered ? login : register}
+                registered={registered}
+              />
               <div className="mt-8 text-sm">
                 <p>
                   {registered

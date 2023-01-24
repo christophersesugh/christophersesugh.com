@@ -6,6 +6,7 @@ import { AnalyticsWrapper } from "./analytics-wrapper";
 import Footer from "./footer";
 import Navbar from "./nav-bar";
 import ErrorFallback from "pages/error-fallback";
+import { AuthProvider } from "context/auth-context";
 
 export default function Layout({
   pageProps,
@@ -39,10 +40,12 @@ export default function Layout({
       >
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
-            <Navbar />
-            {children}
-            <AnalyticsWrapper />
-            <Footer />
+            <AuthProvider>
+              <Navbar />
+              {children}
+              <AnalyticsWrapper />
+              <Footer />
+            </AuthProvider>
           </Hydrate>
         </QueryClientProvider>
       </ErrorBoundary>

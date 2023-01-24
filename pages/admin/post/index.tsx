@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import { useMutation, useQueryClient } from "react-query";
 import dashify from "dashify";
 import Markdown from "components/markdown";
 import AppHead from "components/app-head";
 import { Form } from "components/admin";
 import { client } from "utils/api-client";
-import Link from "next/link";
+import { useAuth } from "context/auth-context";
 
 type PostProps = {
   title: string;
@@ -21,13 +22,15 @@ export default function Post() {
   const [post, setPost] = React.useState({
     title: "",
     image: "",
+    tag: "",
     body: ``,
   });
   const queryClient = useQueryClient();
+  const { user } = useAuth();
 
   const create = useMutation({
     mutationFn: (post: any) => {
-      return client("posts", { data: post } as any);
+      return client("posts", { data: post, token: user.token } as any);
     },
     onSuccess: () => queryClient.invalidateQueries("posts"),
   });

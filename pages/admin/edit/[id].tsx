@@ -4,7 +4,7 @@ import AppHead from "components/app-head";
 import { Form } from "components/admin";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import dashify from "dashify";
-import LoadingIndicator from "components/loading-indicator";
+import { LoadingIndicator } from "components/loading-indicator";
 import Markdown from "components/markdown";
 import { client } from "utils/api-client";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import Link from "next/link";
 type PostProps = {
   title: string;
   image: string;
-  tags: string[] | string;
+  tag: string;
   body: string;
 };
 
@@ -24,6 +24,7 @@ export default function EditPost() {
   const [postValues, setPost] = React.useState({
     title: "",
     image: "",
+    tag: "",
     body: "",
   });
   const router = useRouter();

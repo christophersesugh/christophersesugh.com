@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useAuth } from "context/auth-context";
 import { PostCard, TotalPosts } from "components/admin";
 import { FaArrowRight, FaPlus } from "react-icons/fa";
 import { useQuery } from "react-query";
@@ -11,6 +12,7 @@ export default function Dashboard() {
   const [query, setQuery] = React.useState("");
   const [limit, setLimit] = React.useState(8);
   const router = useRouter();
+  const { user } = useAuth();
 
   const {
     data: posts,
@@ -22,7 +24,6 @@ export default function Dashboard() {
       client(`posts?title=${query}&limit=${limit}`).then((data) => data.posts),
   });
 
-  let user = true;
   React.useLayoutEffect(() => {
     if (!user || user === null) {
       router.push("/login");

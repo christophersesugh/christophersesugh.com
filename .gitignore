@@ -5,5 +5,5 @@ next-env.d.ts
 .next
 .DS_Store
 .env*.local
-.env
+.env.local
 .vs-code
