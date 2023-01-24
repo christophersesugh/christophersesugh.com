@@ -44,7 +44,7 @@ export function Form({ registered, onSubmit }: FormProps) {
     if (isSuccess) {
       router.push("/me");
     }
-  }, [isSuccess, router, user]);
+  }, [isSuccess, router]);
 
   return (
     <form className="w-full" onSubmit={handleFormSubmit}>

@@ -1,8 +1,16 @@
 // pretend this is firebase, netlify, or auth0's code.
 // you shouldn't have to implement something like this in your own app
-type UserProps = {
+type AuthProps = {
   email: string;
   password: string;
+};
+
+type UserProps = {
+  user: {
+    email: string;
+    id: string;
+    token: string;
+  };
 };
 
 const localStorageKey = "__auth_provider_token__";
@@ -14,16 +22,18 @@ async function getToken() {
   return window.localStorage.getItem(localStorageKey);
 }
 
-function handleUserResponse({ token }: { token: string }) {
-  window.localStorage.setItem(localStorageKey, token);
-  return token;
+function handleUserResponse({ user }: UserProps) {
+  console.log(user);
+
+  window.localStorage.setItem(localStorageKey, user.token);
+  return user;
 }
 
-function login({ email, password }: UserProps) {
+function login({ email, password }: AuthProps) {
   return client("login", { email, password }).then(handleUserResponse);
 }
 
-function register({ email, password }: UserProps) {
+function register({ email, password }: AuthProps) {
   return client("register", { email, password }).then(handleUserResponse);
 }
 

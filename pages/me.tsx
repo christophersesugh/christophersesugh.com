@@ -7,8 +7,16 @@ import { useAuth } from "context/auth-context";
 import AppHead from "components/app-head";
 import PageHeader from "components/page-header";
 
+type UserInfoProps = {
+  email: string;
+  id: string;
+  token: string;
+};
+
 export default function Me() {
   const { user, logout } = useAuth();
+  console.log(user);
+
   const router = useRouter();
   React.useLayoutEffect(() => {
     if (!user || user === null) {
@@ -35,16 +43,18 @@ export default function Me() {
         <div className="mt-12 w-full md:w-[50%]">
           <button
             onClick={logout}
-            className="rounded-lg p-2 bg-blue-500 text-slate-200 mt-8"
+            className="rounded-lg p-2 mb-8 bg-blue-500 text-slate-200 mt-8"
           >
             Log out <FaArrowRight className="inline ml-4" />
           </button>
           <br />
-          <Link href="/admin/dashboard">
-            <button className="rounded-lg p-2 bg-blue-500 text-slate-200 my-8">
-              Dashboard
-            </button>
-          </Link>
+          {user?.email === "christohybrid185@gmail.com" ? (
+            <Link href="/admin/dashboard">
+              <button className="rounded-lg p-2 bg-blue-500 text-slate-200 my-8">
+                Dashboard
+              </button>
+            </Link>
+          ) : null}
           <ul>
             {user ? (
               <li className="rounded-lg bg-zinc-300">

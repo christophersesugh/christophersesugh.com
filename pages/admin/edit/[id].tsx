@@ -1,13 +1,14 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import AppHead from "components/app-head";
 import { Form } from "components/admin";
-import { useMutation, useQuery, useQueryClient } from "react-query";
 import dashify from "dashify";
 import { LoadingIndicator } from "components/loading-indicator";
 import Markdown from "components/markdown";
 import { client } from "utils/api-client";
-import Link from "next/link";
+import { useAuth } from "context/auth-context";
 
 type PostProps = {
   title: string;
@@ -28,17 +29,20 @@ export default function EditPost() {
     body: "",
   });
   const router = useRouter();
+  const { user } = useAuth();
   const queryClient = useQueryClient();
   const { id } = router.query;
 
   const update = useMutation({
     mutationFn: (post: any) => {
-      return client(`posts/${post._id}`, {
+      return client(`posts/${post?._id}`, {
         data: post,
+        token: user.token,
         method: "PATCH",
       } as any);
     },
     onSuccess: () => queryClient.invalidateQueries(["posts"]),
+    onError: () => queryClient.refetchQueries(["posts"]),
   });
 
   const {
@@ -59,9 +63,9 @@ export default function EditPost() {
     <>
       <AppHead title={`Edit post | CSA`} />
       {isLoading ? (
-        <LoadingIndicator path={router.asPath} />
+        <h2 className="text-2xl">Loading...</h2>
       ) : isError ? (
-        <p>{error as any}</p>
+        <p>{error instanceof Error ? error.message : "An error occured"}</p>
       ) : isSuccess ? (
         <div className="mx-8">
           <h1 className="text-center text-3xl">Edit post</h1>

@@ -12,7 +12,7 @@ type FormProps = {
 };
 
 type User = {
-  user: { email: string; id: string; token: string };
+  user: { email: string; id: string; token: string; verified: boolean };
   login: (form: FormProps) => Promise<any>;
   register: (form: FormProps) => Promise<any>;
   logout: () => void;
