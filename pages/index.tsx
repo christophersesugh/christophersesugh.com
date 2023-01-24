@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import AppHead from "components/app-head";
 import Hero from "components/hero";

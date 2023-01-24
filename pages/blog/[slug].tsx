@@ -5,7 +5,7 @@ import { BlogSlug } from "components/blog";
 export default function Post({ post }: any) {
   return (
     <div className="my-20 max-w-2xl mx-8 md:mx-auto">
-      <BlogSlug post={post} />;
+      <BlogSlug post={post} />
     </div>
   );
 }
