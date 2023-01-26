@@ -49,6 +49,7 @@ code {
 .view h1 {
   font-size: 1.7em;
   color: mediumslateblue;
+  margin-bottom: 8px;
 }
 
 .view h2 {
