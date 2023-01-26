@@ -48,10 +48,12 @@ code {
 }
 .view h1 {
   font-size: 1.7em;
+  color: mediumslateblue;
 }
 
 .view h2 {
   font-size: 1.4em;
+  color: cornflowerblue;
 }
 
 .privacy-policy {
