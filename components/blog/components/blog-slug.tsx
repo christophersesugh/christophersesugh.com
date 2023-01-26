@@ -32,7 +32,7 @@ export function BlogSlug({ post, relatedPosts }: any) {
       {post ? (
         <>
           <div>
-            <div className="max-w-2xl mx-4 md:mx-auto flex flex-col justify-center">
+            <div className="max-w-2xl px-4 mx-auto flex flex-col justify-center">
               <h1 className="text-4xl font-extrabold capitalize">
                 {post?.title}
               </h1>
