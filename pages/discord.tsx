@@ -4,7 +4,7 @@ import PageHeader from "components/page-header";
 import Image from "next/image";
 import { BsDiscord } from "react-icons/bs";
 
-export default function Discord() {
+function Discord() {
   return (
     <>
       <AppHead title="CAS community on discord | CAS" />
@@ -81,3 +81,5 @@ export default function Discord() {
     </>
   );
 }
+
+export default Discord;

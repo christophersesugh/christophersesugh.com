@@ -1,6 +1,6 @@
 import * as auth from "./auth-provider";
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://cas.cyclic.app";
 
 async function client(
   endpoint: string,
