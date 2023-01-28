@@ -16,15 +16,14 @@ export function BlogSlug({ post, relatedPosts }: any) {
   if (post) {
     stats = readingTime(post.body);
   }
-  console.log(router.asPath);
 
   return (
     // <div className="my-20 max-w-2xl mx-8 md:mx-auto">
     <>
-      {/* <AppHead
+      <AppHead
         title={`${post?.title} | CAS`}
         descriptionContent={post?.title}
-      /> */}
+      />
       <Head>
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post?.title} />
@@ -32,7 +31,7 @@ export function BlogSlug({ post, relatedPosts }: any) {
         <meta
           property="og:url"
           content={encodeURIComponent(
-            `https://www.christophersesugh.com/blog/${post!.slug}`
+            `https://www.christophersesugh.com/blog/${post.slug}`
           )}
         />
         <meta property="og:image" content={post!.image} />
@@ -72,32 +71,14 @@ export function BlogSlug({ post, relatedPosts }: any) {
               <div>
                 <Markdown code={post?.body} />
               </div>
-              <a
-                target="_blank"
-                href={encodeURIComponent(
-                  `https://twitter.com/intent/tweet?url=https://www.christophersesugh.com/blog/${`${post.slug}`}`
-                )}
-                className="twitter-share-button text-lg text-blue-400"
-                data-via="coding_simba"
-                data-hashtags={`${post.tag}`}
-                data-show-count="true"
-                rel="noreferrer"
-              >
-                Tweet
-              </a>
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charSet="utf-8"
-              ></script>
 
-              {/* <TwitterShareButton
+              <TwitterShareButton
                 className="text-blue-400 hover:underline text-xl"
                 url={`https://www.christophersesugh.com/blog/${post.slug}`}
               >
                 <TwitterIcon size={32} className="inline mr-4" round />
                 Share on Twitter
-              </TwitterShareButton> */}
+              </TwitterShareButton>
             </div>
           </div>
         </>
