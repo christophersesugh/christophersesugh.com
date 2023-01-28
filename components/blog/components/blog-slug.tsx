@@ -32,10 +32,10 @@ export function BlogSlug({ post, relatedPosts }: any) {
         <meta
           property="og:url"
           content={encodeURIComponent(
-            `https://www.christophersesugh.com/blog/${post?.slug}`
+            `https://www.christophersesugh.com/blog/${post!.slug}`
           )}
         />
-        <meta property="og:image" content={post?.image} />
+        <meta property="og:image" content={post!.image} />
       </Head>
       <div className="my-20">
         <Link href="/blog">
