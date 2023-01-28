@@ -10,16 +10,13 @@ import { client } from "utils/api-client";
 function HomePage({ posts }: any) {
   return (
     <>
-      <AppHead title="Christopher A. Sesugh" />
-      <Fade>
-        <Hero />
-      </Fade>
-      <Fade cascade duration={2000}>
-        <About />
-      </Fade>
-      <Fade cascade duration={2000}>
-        <Discord />
-      </Fade>
+      <AppHead
+        title="Christopher A. Sesugh"
+        descriptionContent="Helping make the world a better place by building quality software and sharing my exisiting knowledge."
+      />
+      <Hero />
+      <About />
+      <Discord />
       <Posts posts={posts} />
     </>
   );

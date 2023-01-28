@@ -29,7 +29,10 @@ export default function About() {
         </h3>
         <Link href="/about">
           <button className="rounded-xl  text-xl p-4 mt-12 border-2 border-slate-400 hover:border-slate-800 dark:hover:border-[#fff] flex items-center">
-            <BsArrowRight className="text-xl inline animate-pulse mr-4" />
+            <BsArrowRight
+              className="text-xl inline animate-pulse mr-4"
+              aria-label="learn more about CAS"
+            />
             <span>Learn more about Me.</span>
           </button>
         </Link>

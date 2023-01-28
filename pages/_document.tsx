@@ -5,6 +5,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
+        <meta lang="en-US" />
+        <meta http-equiv="content-language" content="en-US" />
         <meta name="author" content="Christopher Aondona Sesugh" />
         <meta
           name="keywords"

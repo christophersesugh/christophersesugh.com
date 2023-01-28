@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
-import Title from "./title";
 
 export default function Social() {
   return (
@@ -13,7 +12,9 @@ export default function Social() {
       <div className="flex gap-6 justify-center items-center mt-4">
         {handles.map((handle) => (
           <Link href={handle.link} key={handle.link}>
-            <button className="text-2xl">{handle.icon}</button>
+            <button className="text-2xl" aria-label={handle.name}>
+              {handle.icon}
+            </button>
           </Link>
         ))}
       </div>
@@ -22,10 +23,19 @@ export default function Social() {
 }
 
 const handles = [
-  { icon: <BsGithub />, link: "https://github.com/christophersesugh" },
+  {
+    icon: <BsGithub />,
+    link: "https://github.com/christophersesugh",
+    name: "github icon",
+  },
   {
     icon: <BsLinkedin />,
     link: "https://www.linkedin.com/christopher-sesugh-265332176/",
+    name: "linkedin icon",
   },
-  { icon: <BsTwitter />, link: "https://twitter.com/coding_simba" },
+  {
+    icon: <BsTwitter />,
+    link: "https://twitter.com/coding_simba",
+    name: "twitter icon",
+  },
 ];

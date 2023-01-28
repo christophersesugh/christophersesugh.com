@@ -20,7 +20,10 @@ export function BlogSlug({ post, relatedPosts }: any) {
   return (
     // <div className="my-20 max-w-2xl mx-8 md:mx-auto">
     <>
-      <AppHead title={`${post?.title} | CAS`} content={`${post?.title}`} />
+      <AppHead
+        title={`${post?.title} | CAS`}
+        descriptionContent={post?.title}
+      />
       <div className="my-20">
         <Link href="/blog">
           <button className="text-xl text-bold">
@@ -56,7 +59,23 @@ export function BlogSlug({ post, relatedPosts }: any) {
               <div>
                 <Markdown code={post?.body} />
               </div>
-              <TwitterShareButton
+              <a
+                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                className="twitter-share-button text-blue-400"
+                data-text={`I just read ${post.title} on and it is interesting`}
+                data-url={`https://christophersesugh.com${router.asPath}`}
+                data-via="coding_simba"
+                data-hashtags={`${post.tag}`}
+                data-show-count="true"
+              >
+                Tweet
+              </a>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charSet="utf-8"
+              ></script>
+              {/* <TwitterShareButton
                 url={`https://christophersesugh.com${router.asPath}`}
                 title={post.title}
                 hashtags={[post.tag]}
@@ -65,8 +84,7 @@ export function BlogSlug({ post, relatedPosts }: any) {
               >
                 <TwitterIcon size={32} className="inline mr-4" round />
                 Share on Twitter
-              </TwitterShareButton>
-              {/* <TwitterShareButton postUrl={post.slug} /> */}
+              </TwitterShareButton> */}
             </div>
           </div>
         </>

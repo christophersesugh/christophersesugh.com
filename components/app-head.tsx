@@ -3,14 +3,14 @@ import React from "react";
 
 type AppHeadProps = {
   title: string;
-  content?: string;
+  descriptionContent?: string;
 };
 
-export default function AppHead({ title, content }: AppHeadProps) {
+export default function AppHead({ title, descriptionContent }: AppHeadProps) {
   return (
     <Head>
       <title>{title}</title>
-      <meta name="description" content={content} />
+      <meta name="description" content={descriptionContent} />
     </Head>
   );
 }

@@ -10,7 +10,11 @@ export default function NavButton({
   onClick?: () => void;
 }) {
   return (
-    <button onClick={onClick} className={`${className} text-lg`}>
+    <button
+      onClick={onClick}
+      className={`${className} text-lg`}
+      aria-label="nav button"
+    >
       {children}
     </button>
   );
