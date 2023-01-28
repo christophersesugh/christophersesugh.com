@@ -8,6 +8,7 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 
 import AppHead from "components/app-head";
 import Markdown from "components/markdown";
+import Head from "next/head";
 
 export function BlogSlug({ post, relatedPosts }: any) {
   const router = useRouter();
@@ -24,6 +25,16 @@ export function BlogSlug({ post, relatedPosts }: any) {
         title={`${post?.title} | CAS`}
         descriptionContent={post?.title}
       />
+      <Head>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.content} />
+        <meta
+          property="og:url"
+          content={`https://www.christophersesugh.com/blog/${post.slug}`}
+        />
+        <meta property="og:image" content={post.image} />
+      </Head>
       <div className="my-20">
         <Link href="/blog">
           <button className="text-xl text-bold">
@@ -61,9 +72,7 @@ export function BlogSlug({ post, relatedPosts }: any) {
               </div>
               <a
                 href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                className="twitter-share-button text-blue-400 text-3xl"
-                data-text={`I just read ${post.title} on and it is interesting`}
-                data-url={`https://christophersesugh.com/blog/${post.slug}`}
+                className="twitter-share-button"
                 data-via="coding_simba"
                 data-hashtags={`${post.tag}`}
                 data-show-count="true"
@@ -75,12 +84,10 @@ export function BlogSlug({ post, relatedPosts }: any) {
                 src="https://platform.twitter.com/widgets.js"
                 charSet="utf-8"
               ></script>
+
               {/* <TwitterShareButton
-                url={`https://christophersesugh.com${router.asPath}`}
-                title={post.title}
-                hashtags={[post.tag]}
-                via={"coding_simba"}
-                className="text-blue-400 hover:underline text-lg"
+                className="text-blue-400 hover:underline text-xl"
+                url={`https://www.christophersesugh.com/blog/${post.slug}`}
               >
                 <TwitterIcon size={32} className="inline mr-4" round />
                 Share on Twitter
