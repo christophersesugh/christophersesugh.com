@@ -31,7 +31,9 @@ export function BlogSlug({ post, relatedPosts }: any) {
         <meta property="og:description" content={post.content} />
         <meta
           property="og:url"
-          content={`https://www.christophersesugh.com/blog/${post.slug}`}
+          content={encodeURIComponent(
+            `https://www.christophersesugh.com/blog/${post.slug}`
+          )}
         />
         <meta property="og:image" content={post.image} />
       </Head>
@@ -71,11 +73,15 @@ export function BlogSlug({ post, relatedPosts }: any) {
                 <Markdown code={post?.body} />
               </div>
               <a
-                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                className="twitter-share-button"
+                target="_blank"
+                href={encodeURIComponent(
+                  `https://twitter.com/intent/tweet?url=https://www.christophersesugh.com/blog/${`${post.slug}`}`
+                )}
+                className="twitter-share-button text-lg text-blue-400"
                 data-via="coding_simba"
                 data-hashtags={`${post.tag}`}
                 data-show-count="true"
+                rel="noreferrer"
               >
                 Tweet
               </a>
