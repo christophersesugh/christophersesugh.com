@@ -21,21 +21,21 @@ export function BlogSlug({ post, relatedPosts }: any) {
   return (
     // <div className="my-20 max-w-2xl mx-8 md:mx-auto">
     <>
-      <AppHead
+      {/* <AppHead
         title={`${post?.title} | CAS`}
         descriptionContent={post?.title}
-      />
+      /> */}
       <Head>
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.content} />
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:description" content={post?.content} />
         <meta
           property="og:url"
           content={encodeURIComponent(
-            `https://www.christophersesugh.com/blog/${post.slug}`
+            `https://www.christophersesugh.com/blog/${post?.slug}`
           )}
         />
-        <meta property="og:image" content={post.image} />
+        <meta property="og:image" content={post?.image} />
       </Head>
       <div className="my-20">
         <Link href="/blog">
