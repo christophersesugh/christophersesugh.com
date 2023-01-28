@@ -61,9 +61,9 @@ export function BlogSlug({ post, relatedPosts }: any) {
               </div>
               <a
                 href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                className="twitter-share-button text-blue-400"
+                className="twitter-share-button text-blue-400 text-3xl"
                 data-text={`I just read ${post.title} on and it is interesting`}
-                data-url={`https://christophersesugh.com${router.asPath}`}
+                data-url={`https://christophersesugh.com/blog/${post.slug}`}
                 data-via="coding_simba"
                 data-hashtags={`${post.tag}`}
                 data-show-count="true"
