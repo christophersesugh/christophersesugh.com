@@ -20,7 +20,13 @@ export default function Blog() {
 
   return (
     <Fade cascade duration={1000}>
-      <AppHead title="Blog | CAS" />
+      <AppHead
+        pageTitle={`Blog | CAS`}
+        pageType="blog"
+        postImage="https://res.cloudinary.com/christo/image/upload/v1675179148/home_lsq4vv.webp"
+        pageDescription="Helping change the world through quality software."
+      />
+
       <BlogHeader />
       <div className="mb-40 mx-auto max-w-4xl flex flex-col ">
         <Fade cascade duration={300}>

@@ -1,12 +1,22 @@
 import React from "react";
 import { client } from "utils/api-client";
 import { BlogSlug } from "components/blog";
+import AppHead from "components/app-head";
 
 export default function Post({ post }: any) {
   return (
-    <div className="my-20 max-w-2xl mx-8 md:mx-auto">
-      <BlogSlug post={post} />
-    </div>
+    <>
+      <AppHead
+        pageType="article"
+        pageTitle={`${post.title} | CAS`}
+        pageDescription={post.title}
+        postSlug={post.slug}
+        postImage={post.image}
+      />
+      <div className="my-20 max-w-2xl mx-8 md:mx-auto">
+        <BlogSlug post={post} />
+      </div>
+    </>
   );
 }
 

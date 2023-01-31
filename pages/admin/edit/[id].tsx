@@ -61,7 +61,7 @@ export default function EditPost() {
   });
   return (
     <>
-      <AppHead title={`Edit post | CSA`} />
+      <AppHead pageTitle={`Edit post | CAS`} pageType="website" />
       {isLoading ? (
         <h2 className="text-2xl">Loading...</h2>
       ) : isError ? (

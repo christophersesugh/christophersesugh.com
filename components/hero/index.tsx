@@ -10,7 +10,7 @@ export default function Hero() {
       title="Helping change the world through quality software."
       headerImage={
         <Image
-          src="/assets/header.png"
+          src="https://res.cloudinary.com/christo/image/upload/v1675179148/home_lsq4vv.webp"
           width={300}
           height={200}
           alt="login"

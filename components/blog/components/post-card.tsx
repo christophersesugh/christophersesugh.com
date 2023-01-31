@@ -20,14 +20,13 @@ export function PostCard({ post }: PostCardProps) {
     <Link href={`/blog/${post.slug}`}>
       <article className="p-4 flex flex-col justify-center items-center w-full ">
         <Image
-          // fill
           src={post?.image}
           height={200}
           width={200}
           alt={post?.title}
-          className="w-full rounded-lg"
+          className="w-full rounded-lg  h-[12em]"
         />
-        <p className="text-xl font-extrabold text-slate-400 self-start my-4">
+        <p className="text-xl  font-extrabold text-slate-400 self-start my-4">
           {stats?.text}
         </p>
         <h1 className="self-start text-3xl font-bold">{post?.title}</h1>

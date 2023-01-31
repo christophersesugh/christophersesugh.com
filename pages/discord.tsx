@@ -7,7 +7,7 @@ import { BsDiscord } from "react-icons/bs";
 function Discord() {
   return (
     <>
-      <AppHead title="CAS community on discord | CAS" />
+      <AppHead pageTitle="CAS community on discord" pageType={"website"} />
 
       <div className="mx-8 md:px-16 md:max-w-6xl md:mx-auto">
         <PageHeader

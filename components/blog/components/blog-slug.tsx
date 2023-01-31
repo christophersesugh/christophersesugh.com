@@ -8,7 +8,6 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 
 import AppHead from "components/app-head";
 import Markdown from "components/markdown";
-import Head from "next/head";
 
 export function BlogSlug({ post, relatedPosts }: any) {
   const router = useRouter();
@@ -20,22 +19,13 @@ export function BlogSlug({ post, relatedPosts }: any) {
   return (
     // <div className="my-20 max-w-2xl mx-8 md:mx-auto">
     <>
-      <AppHead
-        title={`${post?.title} | CAS`}
-        descriptionContent={post?.title}
-      />
-      <Head>
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:description" content={post?.content} />
-        <meta
-          property="og:url"
-          content={encodeURIComponent(
-            `https://www.christophersesugh.com/blog/${post.slug}`
-          )}
-        />
-        <meta property="og:image" content={post!.image} />
-      </Head>
+      {/* <AppHead
+        pageType="article"
+        pageTitle={`${post.title} | CAS`}
+        pageDescription={post.title}
+        postSlug={post.slug}
+        postImage={post.image}
+      /> */}
       <div className="my-20">
         <Link href="/blog">
           <button className="text-xl text-bold">
@@ -69,7 +59,7 @@ export function BlogSlug({ post, relatedPosts }: any) {
                 />
               </div>
               <div>
-                <Markdown code={post?.body} />
+                <Markdown code={post.body} />
               </div>
 
               <TwitterShareButton

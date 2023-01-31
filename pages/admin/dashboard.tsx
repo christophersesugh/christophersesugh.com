@@ -32,7 +32,8 @@ export default function Dashboard() {
 
   return (
     <>
-      <AppHead title="Dashboard | CAS" />
+      <AppHead pageTitle={`Dashboard | CAS`} pageType="website" />
+
       <div className="flex flex-col max-w-4xl border-2 rounded-lg items-center my-20 mx-4 p-4 md:mx-auto">
         <TotalPosts posts={posts} isSuccess={isSuccess} />
         <div className="flex gap-4 my-10">

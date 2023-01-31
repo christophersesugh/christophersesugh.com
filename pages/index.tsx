@@ -11,8 +11,10 @@ function HomePage({ posts }: any) {
   return (
     <>
       <AppHead
-        title="Christopher A. Sesugh"
-        descriptionContent="Helping make the world a better place by building quality software and sharing my exisiting knowledge."
+        pageType="blog"
+        postImage="https://res.cloudinary.com/christo/image/upload/v1675179148/home_lsq4vv.webp"
+        pageTitle="Christopher A. Sesugh"
+        pageDescription="Helping make the world a better place by building quality software and sharing my exisiting knowledge."
       />
       <Hero />
       <About />

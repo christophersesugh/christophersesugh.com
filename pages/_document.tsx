@@ -2,23 +2,17 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en-US">
       <Head>
         <meta charSet="UTF-8" />
-        <meta lang="en-US" />
-        <meta httpEquiv="content-language" content="en-US" />
         <meta name="author" content="Christopher Aondona Sesugh" />
         <meta
           name="keywords"
-          content="JavaScript, React, Nextjs, C, python, software, programming, coding, algorithms"
-        />
-        <meta
-          name="description"
-          content="Helping make the world a better place by building quality software and sharing my exisiting knowledge."
+          content="JavaScript, React, Nextjs, C, python, software, software engineering, programming, coding, algorithms"
         />
 
-        <link rel="apple-touch-icon" href="/assets/img4.png" />
-        <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" />
+        {/* <link rel="apple-touch-icon" href="/assets/img4.png" />
+        <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" /> */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

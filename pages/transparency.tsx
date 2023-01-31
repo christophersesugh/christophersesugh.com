@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function PrivacyPolicy() {
   return (
     <>
-      <AppHead title="Privacy Policy | CAS" />
+      <AppHead pageTitle="Privacy Policy | CAS" pageType={"website"} />
       <div className="mx-8 md:max-w-2xl md:mx-auto">
         <h2
           id="privacy-policy"

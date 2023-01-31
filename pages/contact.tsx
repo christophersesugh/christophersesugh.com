@@ -6,7 +6,8 @@ import Image from "next/image";
 export default function Contact() {
   return (
     <>
-      <AppHead title="Contact CAS" />
+      <AppHead pageTitle="Contact CAS" pageType={"website"} />
+
       <div className="mx-8 md:max-w-4xl md:mx-auto mb-12">
         <PageHeader
           headerImage={

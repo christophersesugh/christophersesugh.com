@@ -11,7 +11,8 @@ export default function Login() {
   const { login, register } = useAuth();
   return (
     <>
-      <AppHead title="Login | CAS" />
+      <AppHead pageTitle="Login | CAS" pageType={"website"} />
+
       <Fade cascade duration={1000}>
         <div className="px-4 w-full">
           <PageHeader

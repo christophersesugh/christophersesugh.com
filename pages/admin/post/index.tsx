@@ -37,7 +37,8 @@ export default function Post() {
 
   return (
     <>
-      <AppHead title="Create post | CAS" />
+      <AppHead pageTitle={`Create post | CAS`} pageType="website" />
+
       <section className="max-w-4xl mx-auto ">
         <h1 className="text-center text-3xl">Create a blog post</h1>
         <Link href="/admin/dashboard">
