@@ -6,7 +6,7 @@ import { BsArrowLeft } from "react-icons/bs";
 export default function ErrorPage() {
   return (
     <>
-      <AppHead pageTitle="Page not found | CAS" pageType={"website"} />
+      <AppHead pageTitle="Page not found | CAS" />
 
       <section className="max-w-4xl mx-auto mb-20 flex flex-col justify-center items-center ">
         <h1 className="text-[10rem] text-center">404</h1>

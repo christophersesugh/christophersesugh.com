@@ -32,7 +32,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <AppHead pageTitle={`Dashboard | CAS`} pageType="website" />
+      <AppHead pageTitle={`Dashboard | CAS`} />
 
       <div className="flex flex-col max-w-4xl border-2 rounded-lg items-center my-20 mx-4 p-4 md:mx-auto">
         <TotalPosts posts={posts} isSuccess={isSuccess} />

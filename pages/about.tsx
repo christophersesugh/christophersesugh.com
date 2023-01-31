@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <AppHead pageTitle="About CAS" pageType={"website"} />
+      <AppHead pageTitle="About CAS" />
 
       <div className="mx-8 md:max-w-4xl md:mx-auto">
         <PageHeader

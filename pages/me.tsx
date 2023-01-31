@@ -25,7 +25,7 @@ export default function Me() {
 
   return (
     <>
-      <AppHead pageTitle="Profile | CAS" pageType={"website"} />
+      <AppHead pageTitle="Profile | CAS" />
       <PageHeader
         headerImage={
           <Image
