@@ -9,7 +9,7 @@ body {
 }
 
 code {
-  font-family: Menlo, "DM Mono" "Lucida Sans Regular", "Lucida Grande",
+  font-family: Menlo, "Fira Code" "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
@@ -40,10 +40,6 @@ code {
   list-style-type: decimal;
 }
 
-/* .view img {
-  margin: 3rem 0 3rem 0;
-} */
-
 .view a {
   text-decoration: underline;
   color: rgb(82, 82, 212);
@@ -59,11 +55,21 @@ code {
   color: cornflowerblue;
 }
 
+.view h3 {
+  font-size: 1.1em;
+  color: cornflowerblue;
+}
+
+.view h3 {
+  font-size: 0.8em;
+  color: cornflowerblue;
+}
+
 .view blockquote {
-  border-left: 5px solid dodgerblue;
-  background-color: rgb(205, 194, 194);
+  border-left: 8px solid dodgerblue;
+  background-color: hsl(201, 54%, 89%);
   color: rgb(50, 34, 34);
-  padding: 1px 5px;
+  padding: 2px 8px;
 }
 
 .privacy-policy {

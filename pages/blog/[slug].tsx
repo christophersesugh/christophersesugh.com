@@ -1,20 +1,15 @@
 import React from "react";
+import { useQuery } from "react-query";
 import { client } from "utils/api-client";
-import { BlogSlug } from "components/blog";
+import { Slug } from "components/blog";
 import AppHead from "components/app-head";
 
 export default function Post({ post }: any) {
   return (
     <>
-      <AppHead
-        pageType="article"
-        pageTitle={`${post.title} | CAS`}
-        pageDescription={post.title}
-        postSlug={post.slug}
-        postImage={post.image}
-      />
-      <div className="my-20 max-w-2xl mx-8 md:mx-auto">
-        <BlogSlug post={post} />
+      <AppHead pageTitle={`${post.title} | CAS`} pageDescription={post.title} />
+      <div className="my-20 max-w-2xl px-8 mx-auto">
+        <Slug post={post} />
       </div>
     </>
   );
@@ -30,7 +25,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 

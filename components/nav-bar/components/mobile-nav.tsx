@@ -40,11 +40,11 @@ export default function MobileNav({ isOpen, setIsOpen }: MobileNavProps) {
           >
             {darkMode ? (
               <>
-                <BsSun className="text-3xl inline mr-4" /> light mode
+                <BsMoon className="text-3xl inline mr-4" /> dark mode
               </>
             ) : (
               <>
-                <BsMoon className="text-3xl inline mr-4" /> dark mode
+                <BsSun className="text-3xl inline mr-4" /> light mode
               </>
             )}
           </NavButton>

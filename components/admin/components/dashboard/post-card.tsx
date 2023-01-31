@@ -15,7 +15,7 @@ export function PostCard({ post }: any) {
         method: "DELETE",
       } as any);
     },
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
     },
   });
@@ -33,11 +33,7 @@ export function PostCard({ post }: any) {
       <div className="flex justify-between mt-8">
         <button
           className="rounded-md bg-red-500 p-2"
-          onClick={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            deletePost.mutate({ id: post._id });
-          }}
+          onClick={() => deletePost.mutate({ id: post._id })}
         >
           {deletePost.isLoading ? (
             "Deleting..."

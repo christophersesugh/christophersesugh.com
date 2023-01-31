@@ -11,8 +11,8 @@ export default function Document() {
           content="JavaScript, React, Nextjs, C, python, software, software engineering, programming, coding, algorithms"
         />
 
-        {/* <link rel="apple-touch-icon" href="/assets/img4.png" />
-        <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" /> */}
+        <link rel="apple-touch-icon" href="/assets/img4.png" />
+        <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -23,8 +23,9 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           rel="stylesheet"
         />
+
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+Pro&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
           rel="stylesheet"
         />
       </Head>

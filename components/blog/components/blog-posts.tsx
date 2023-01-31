@@ -2,7 +2,7 @@ import React from "react";
 import { Loading } from "./loading-indicator";
 import { PostCard } from "./post-card";
 
-export function BlogCards({ postsData, queried }: any) {
+export function BlogPosts({ postsData }: any) {
   const { data: posts, error, isError, isLoading, isSuccess } = postsData;
   return (
     <>
@@ -26,21 +26,17 @@ export function BlogCards({ postsData, queried }: any) {
 
         {/* success ui */}
         {isSuccess ? (
-          <>
-            {isSuccess ? (
-              posts.length ? (
-                posts.map((post: any) => (
-                  <div key={post.id}>
-                    <PostCard post={post} />
-                  </div>
-                ))
-              ) : (
-                <h3 className="text-center text-lg">
-                  No posts found. Try another search.
-                </h3>
-              )
-            ) : null}
-          </>
+          posts.length ? (
+            posts.map((post: any) => (
+              <div key={post._id}>
+                <PostCard post={post} />
+              </div>
+            ))
+          ) : (
+            <h3 className="text-center text-lg">
+              No posts found. Try another search.
+            </h3>
+          )
         ) : null}
       </div>
     </>

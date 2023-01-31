@@ -22,7 +22,6 @@ export function LoadMore({
         </button>
       ) : (
         <button
-          // disabled={!posts?.data?.length}
           onClick={() => setPostLimit((limit: number) => limit + 6)}
           className={`"border-red-500 hover:border-red-500" 
              mt-20 rounded-3xl p-4 border-2 border-slate-400 dark:hover:border-white transition-all duration-300 hover:border-black`}
