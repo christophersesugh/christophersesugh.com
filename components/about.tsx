@@ -14,7 +14,7 @@ export default function About() {
         width={300}
         height={200}
         alt="Christopher Sesugh"
-        className="md:self-start rounded-3xl md:mx-14 h-[300px] w-[200px]"
+        className="md:self-start rounded-3xl md:mx-14 h-[200px] w-[200px]"
       />
 
       <div>
