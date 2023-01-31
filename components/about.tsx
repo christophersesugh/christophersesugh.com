@@ -10,7 +10,7 @@ export default function About() {
       className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row max-w-5xl mx-auto mt-32 md:my-20 mb-12 pt-12"
     >
       <Image
-        src="https://res.cloudinary.com/christo/image/upload/v1675202532/chris_rogny2.webp"
+        src="https://res.cloudinary.com/christo/image/upload/v1675203108/chris_ajcw3z.jpg"
         width={300}
         height={200}
         alt="Christopher Sesugh"
