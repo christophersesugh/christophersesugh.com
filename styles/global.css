@@ -9,7 +9,7 @@ body {
 }
 
 code {
-  font-family: Menlo, "Fira Code" "Lucida Sans Regular", "Lucida Grande",
+  font-family: "Fira Code", Menlo, "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
