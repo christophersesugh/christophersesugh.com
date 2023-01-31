@@ -7,12 +7,11 @@ export default function About() {
   return (
     <>
       <AppHead pageTitle="About CAS" />
-
       <div className="mx-8 md:max-w-4xl md:mx-auto">
         <PageHeader
           headerImage={
             <Image
-              src="/assets/chris.jpeg"
+              src="https://res.cloudinary.com/christo/image/upload/v1675203108/chris_ajcw3z.jpg"
               width={300}
               height={300}
               alt="Christopher A. Sesugh"
