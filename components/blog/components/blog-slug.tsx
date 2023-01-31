@@ -61,11 +61,11 @@ export function BlogSlug({ post, relatedPosts }: any) {
               <div className="block w-full relative h-auto">
                 <Image
                   // fill
-                  width={300}
+                  width={400}
                   height={300}
                   src={post?.image}
                   alt={post?.title}
-                  className="rounded block relative w-full mb-12"
+                  className="rounded block  w-full mb-12"
                 />
               </div>
               <div>

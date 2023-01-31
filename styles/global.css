@@ -57,6 +57,13 @@ code {
   color: cornflowerblue;
 }
 
+.view blockquote {
+  border-left: 5px solid dodgerblue;
+  background-color: rgb(205, 194, 194);
+  color: rgb(50, 34, 34);
+  padding: 1px 5px;
+}
+
 .privacy-policy {
   list-style-type: square;
 }
