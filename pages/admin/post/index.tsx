@@ -11,6 +11,7 @@ import { useAuth } from "context/auth-context";
 type PostProps = {
   title: string;
   image: string;
+  tags: string;
   body: string;
 };
 
@@ -22,7 +23,7 @@ export default function Post() {
   const [post, setPost] = React.useState({
     title: "",
     image: "",
-    tag: "",
+    tags: "",
     body: ``,
   });
   const queryClient = useQueryClient();

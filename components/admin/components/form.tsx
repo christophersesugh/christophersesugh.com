@@ -6,7 +6,7 @@ import TextArea from "./text-area";
 type PostProps = {
   title: string;
   image: string;
-  tag: string;
+  tags: string;
   body: string;
 };
 
@@ -64,10 +64,10 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
         onChange={handleFormChange}
       />
       <FormInput
-        value={post.tag}
+        value={post.tags}
         type="text"
-        id="tag"
-        label="Tag"
+        id="tags"
+        label="Tags"
         onChange={handleFormChange}
       />
 

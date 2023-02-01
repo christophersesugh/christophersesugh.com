@@ -13,7 +13,7 @@ import { useAuth } from "context/auth-context";
 type PostProps = {
   title: string;
   image: string;
-  tag: string;
+  tags: string;
   body: string;
 };
 
@@ -25,7 +25,7 @@ export default function EditPost() {
   const [postValues, setPost] = React.useState({
     title: "",
     image: "",
-    tag: "",
+    tags: "",
     body: "",
   });
   const router = useRouter();
