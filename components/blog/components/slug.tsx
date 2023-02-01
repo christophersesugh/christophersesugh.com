@@ -25,7 +25,7 @@ export function Slug({ post }: any) {
       {post ? (
         <>
           <div>
-            <div className="max-w-2xl px-4 mx-auto flex flex-col justify-center">
+            <div className="max-w-2xl mx-auto flex flex-col justify-center">
               <h1 className="text-4xl font-extrabold capitalize">
                 {post?.title}
               </h1>
@@ -50,15 +50,12 @@ export function Slug({ post }: any) {
               </div>
 
               <a
-                className={`
-              'underlined hover:text-black focus:text-black focus:outline-none dark:hover:text-white dark:focus:text-white',
-              
-            `}
+                className={`underlined hover:text-blue-400 focus:text-blue-400 focus:outline-none dark:hover:text-white dark:focus:text-white`}
                 target="_blank"
                 rel="noreferrer noopener"
                 href={`https://twitter.com/intent/tweet?${new URLSearchParams({
                   url: "www.christophersesugh.com/" + post.slug,
-                  text: "Sweet post ",
+                  // text: "Sweet post ",
                 })}`}
               >
                 Tweet this post{" "}

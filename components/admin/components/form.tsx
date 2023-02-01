@@ -1,3 +1,4 @@
+import { getRandomValues } from "crypto";
 import React from "react";
 import { useAsync } from "utils/hooks/use-async";
 import FormInput from "./form-input";
@@ -68,7 +69,7 @@ export function Form({ onSubmit, post, setPost }: FormProps) {
         type="text"
         id="tags"
         label="Tags"
-        onChange={handleFormChange}
+        onChange={(e) => setPost({ ...post, tags: e.target.value.split(",") })}
       />
 
       <TextArea

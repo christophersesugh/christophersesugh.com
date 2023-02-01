@@ -4,13 +4,15 @@ import { Slug } from "components/blog";
 import AppHead from "components/app-head";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Post({ post }: any) {
   return (
     <>
-      {/* <AppHead pageTitle={`${post.title} | CAS`} pageDescription={post.title} /> */}
-      <Head>
-        {/* <NextSeo
+      <AppHead pageTitle={`${post.title} | CAS`} pageDescription={post.title} />
+      {/* <Head> */}
+      {/* <NextSeo
           title={post.title}
           description={post.title}
           canonical={`https://www.chrostophersesugh.com/blog/${post.slug}`}
@@ -36,17 +38,27 @@ export default function Post({ post }: any) {
             cardType: "summary",
           }}
         /> */}
-      </Head>
+      {/* </Head> */}
       <div className="my-20 max-w-2xl px-8 mx-auto">
         <Slug post={post} />
-        <hr />
+        <hr className="my-8" />
         <section>
-          <h2 className="text-lg">Written by: Christopher S. Aondona</h2>
-          <p>
+          <h2 className="text-xl mb-4">Written by Christopher S. Aondona</h2>
+          <p className="text-lg text-slate-400">
             Christopher S. Aondona is a software engineer and an educator. His
-            is aim is to help change the world with quality software by sharing
-            his existing knowledge and building quality software products.
+            aim is to help change the world with quality software by sharing his
+            existing knowledge and building quality software products.
           </p>
+
+          <Link href="/about">
+            <button className="rounded-xl  text-xl p-4 mt-8 mb-12 border-2 border-slate-400 hover:border-slate-800 dark:hover:border-[#fff] flex items-center mx-auto transition-all">
+              <BsArrowRight
+                className="text-xl inline animate-pulse mr-4"
+                aria-label="learn more about CAS"
+              />
+              <span>Learn more about Me.</span>
+            </button>
+          </Link>
         </section>
       </div>
     </>
@@ -70,6 +82,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   const { slug } = context.params;
   const post = await getPosts({ slug });
+
   return {
     props: {
       post: post[0],

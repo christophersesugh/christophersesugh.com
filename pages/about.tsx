@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <AppHead pageTitle="About CAS" />
-      <div className="mx-8 md:max-w-4xl md:mx-auto">
+      <div className="px-8 md:max-w-4xl mx-auto">
         <PageHeader
           headerImage={
             <Image

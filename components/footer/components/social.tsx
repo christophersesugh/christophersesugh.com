@@ -11,7 +11,7 @@ export default function Social() {
       </p>
       <div className="flex gap-6 justify-center items-center mt-4">
         {handles.map((handle) => (
-          <Link href={handle.link} key={handle.link}>
+          <Link href={handle.link} key={handle.link} target="_blank">
             <button className="text-2xl" aria-label={handle.name}>
               {handle.icon}
             </button>

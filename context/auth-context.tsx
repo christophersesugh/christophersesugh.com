@@ -64,6 +64,7 @@ function AuthProvider(props: any) {
     queryCache.clear();
     setData(null);
   };
+
   if (isLoading || isIdle) {
     return <FullPageSpinner />;
   }
