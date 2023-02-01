@@ -2,8 +2,6 @@ import React from "react";
 import { client } from "utils/api-client";
 import { Slug } from "components/blog";
 import AppHead from "components/app-head";
-import Head from "next/head";
-import { NextSeo } from "next-seo";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 
@@ -11,34 +9,7 @@ export default function Post({ post }: any) {
   return (
     <>
       <AppHead pageTitle={`${post.title} | CAS`} pageDescription={post.title} />
-      {/* <Head> */}
-      {/* <NextSeo
-          title={post.title}
-          description={post.title}
-          canonical={`https://www.chrostophersesugh.com/blog/${post.slug}`}
-          openGraph={{
-            type: "blog",
-            url: "www.chrostophersesugh.com",
-            title: `${post.title}`,
-            description: post.title,
-            locale: "en_EN",
-            images: [
-              {
-                url: "https://res.cloudinary.com/christo/image/upload/v1675203108/chris_ajcw3z.jpg",
-                width: 800,
-                height: 600,
-                alt: `hero image for ${post.title}`,
-              },
-            ],
-            site_name: "myawesomewebsite.com",
-          }}
-          twitter={{
-            handle: "@coding_simba",
-            site: "www.christophersesugh.com",
-            cardType: "summary",
-          }}
-        /> */}
-      {/* </Head> */}
+
       <div className="my-20 max-w-2xl px-8 mx-auto">
         <Slug post={post} />
         <hr className="my-8" />

@@ -4,7 +4,6 @@ import Image from "next/image";
 import readingTime from "reading-time";
 import { BsArrowLeft } from "react-icons/bs";
 import Markdown from "components/markdown";
-import Head from "next/head";
 
 export function Slug({ post }: any) {
   let stats;
@@ -55,7 +54,7 @@ export function Slug({ post }: any) {
                 rel="noreferrer noopener"
                 href={`https://twitter.com/intent/tweet?${new URLSearchParams({
                   url: "www.christophersesugh.com/" + post.slug,
-                  // text: "Sweet post ",
+                  text: "Sweet post ",
                 })}`}
               >
                 Tweet this post{" "}
