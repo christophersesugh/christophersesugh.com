@@ -54,7 +54,7 @@ export function Slug({ post }: any) {
                 rel="noreferrer noopener"
                 href={`https://twitter.com/intent/tweet?${new URLSearchParams({
                   url: "www.christophersesugh.com/" + post.slug,
-                  text: "Sweet post ",
+                  text: post.title,
                 })}`}
               >
                 Tweet this post{" "}
