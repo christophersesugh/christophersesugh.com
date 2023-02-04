@@ -19,9 +19,9 @@ export default function Post({ post }: any) {
         <Slug post={post} />
         <hr className="my-8" />
         <section>
-          <h2 className="text-xl mb-4">Written by Christopher S. Aondona</h2>
+          <h2 className="text-xl mb-4">Written by Christopher A. Sesugh</h2>
           <p className="text-lg text-slate-400">
-            Christopher S. Aondona is a software engineer and an educator. His
+            Christopher A. Sesugh is a software engineer and an educator. His
             aim is to help change the world with quality software by sharing his
             existing knowledge and building quality software products.
           </p>
