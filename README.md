@@ -34,9 +34,6 @@ Christopher S. Aondona is a software engineer and an educator. His aim is to hel
 
 The app is built with react/next.
 
-- Reactjs
-- React Dom
-- Nextjs
 - tailwind CSS
 - typescript
 - @emotion/react
