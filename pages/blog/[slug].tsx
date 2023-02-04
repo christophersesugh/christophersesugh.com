@@ -12,7 +12,7 @@ export default function Post({ post }: any) {
         pageTitle={`${post.title} | CAS`}
         pageDescription={post.title}
         pageImage={post.image}
-        pageUrl={`https://www.christophersesugh.com/${post.slog}`}
+        pageUrl={`https://www.christophersesugh.com/${post.slug}`}
       />
 
       <div className="my-20 max-w-2xl px-8 mx-auto">

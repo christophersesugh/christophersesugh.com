@@ -6,17 +6,14 @@ export default function Document() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="author" content="Christopher Aondona Sesugh" />
+        <meta property="og:author" content="Christopher Aondona Sesugh" />
         <meta
           name="keywords"
           content="JavaScript, React, Nextjs, C, python, software, software engineering, programming, coding, algorithms, flowcharts, git, data structures"
         />
         <meta
-          property="og:description"
-          content="Helping change the world through quality software."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/christo/image/upload/v1675179148/home_lsq4vv.webp"
+          property="og:keywords"
+          content="JavaScript, React, Nextjs, C, python, software, software engineering, programming, coding, algorithms, flowcharts, git, data structures"
         />
         <link rel="apple-touch-icon" href="/assets/img4.png" />
         <link rel="shortcut icon" href="/assets/img4.png" type="image/x-icon" />

@@ -22,6 +22,8 @@ export default function Blog() {
       <AppHead
         pageTitle={`Blog | CAS`}
         pageDescription="Helping change the world through quality software."
+        pageImage="/assets/blog.webp"
+        pageUrl="https://www.christophersesugh.com/blog"
       />
 
       <BlogHeader />

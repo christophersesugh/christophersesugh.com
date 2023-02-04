@@ -1,5 +1,5 @@
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
 
 type AppHeadProps = {
   pageTitle: string;
@@ -20,9 +20,9 @@ export default function AppHead({
       <meta property="og:title" content={pageTitle} />
       <meta name="description" content={pageDescription} />
       <meta property="og:description" content={pageDescription} />
-      <meta property="image" content={pageImage} />
+      <meta name="image" content={pageImage} />
       <meta property="og:image" content={pageImage} />
-      <meta property="url" content={pageUrl} />
+      <meta name="url" content={pageUrl} />
       <meta property="og:url" content={pageUrl} />
     </Head>
   );
