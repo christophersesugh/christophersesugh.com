@@ -8,7 +8,12 @@ import Link from "next/link";
 export default function Post({ post }: any) {
   return (
     <>
-      <AppHead pageTitle={`${post.title} | CAS`} pageDescription={post.title} />
+      <AppHead
+        pageTitle={`${post.title} | CAS`}
+        pageDescription={post.title}
+        pageImage={post.image}
+        pageUrl={`https://www.christophersesugh.com/${post.slog}`}
+      />
 
       <div className="my-20 max-w-2xl px-8 mx-auto">
         <Slug post={post} />
