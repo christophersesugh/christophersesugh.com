@@ -17,7 +17,7 @@ export function Slug({ post }: any) {
         <Link href="/blog">
           <button className="text-xl text-bold">
             <BsArrowLeft className="inline mr-4 text-2xl font-extrabold" /> Back
-            to review
+            to overview
           </button>
         </Link>
       </div>

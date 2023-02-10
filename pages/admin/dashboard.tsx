@@ -72,7 +72,7 @@ export default function Dashboard() {
         </form>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-[80%] mx-auto my-12">
-          {isLoading ? <p className="text-6xl">Loading...</p> : null}
+          {isLoading ? <p className="text-6xl h-full">Loading...</p> : null}
           {isSuccess ? (
             posts?.length ? (
               <>
