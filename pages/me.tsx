@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context/auth-context";
 import AppHead from "components/app-head";
 import PageHeader from "components/page-header";
+import { withAuth } from "components/with-auth";
 
 type UserInfoProps = {
   email: string;
@@ -13,15 +14,8 @@ type UserInfoProps = {
   token: string;
 };
 
-export default function Me() {
+function Me() {
   const { user, logout } = useAuth();
-  const router = useRouter();
-
-  React.useLayoutEffect(() => {
-    if (!user || user === null) {
-      router.push("/login");
-    }
-  }, [router, user]);
 
   return (
     <>
@@ -69,3 +63,5 @@ export default function Me() {
     </>
   );
 }
+
+export default withAuth(Me);

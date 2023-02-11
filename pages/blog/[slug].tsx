@@ -1,9 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import { client } from "utils/api-client";
 import { Slug } from "components/blog";
 import AppHead from "components/app-head";
 import { BsArrowRight } from "react-icons/bs";
-import Link from "next/link";
 
 export default function Post({ post }: any) {
   return (
