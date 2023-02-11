@@ -10,11 +10,11 @@ export default function About() {
       className="px-16 flex flex-col justify-center items-center gap-12 md:flex-row max-w-5xl mx-auto mt-32 md:my-20 mb-12 pt-12"
     >
       <Image
-        src="https://res.cloudinary.com/christo/image/upload/v1675203108/chris_ajcw3z.jpg"
+        src="https://res.cloudinary.com/christo/image/upload/v1676107498/Image-7741_zedgnk.jpg"
         width={300}
         height={200}
         alt="Christopher Sesugh"
-        className="md:self-start rounded-3xl md:mx-14 h-[200px] w-[200px]"
+        className="md:self-start rounded-full md:mx-14 h-[200px] w-[200px]"
       />
 
       <div>
