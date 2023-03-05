@@ -20,6 +20,10 @@ export const navItems = [
     link: "/",
   },
   {
+    name: "DSA",
+    link: "/dsa",
+  },
+  {
     name: "blog",
     link: "/blog",
   },

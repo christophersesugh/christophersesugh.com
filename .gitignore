@@ -1,5 +1,7 @@
 /node_modules
 /build
+/client
+/server
 # /utils/db/serviceAccountKey.json
 next-env.d.ts
 .next

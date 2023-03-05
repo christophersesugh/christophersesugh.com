@@ -23,7 +23,7 @@ export function PostCard({ post }: PostCardProps) {
           height={200}
           width={200}
           alt={post.title}
-          className="w-full rounded-lg  h-[11em]"
+          className="w-full rounded-lg  md:h-[11rem]"
         />
         <p className="text-xl  font-extrabold text-slate-400 self-start my-4">
           {stats?.text}

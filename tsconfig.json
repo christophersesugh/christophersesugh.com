@@ -20,7 +20,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "utils/hooks/use-async.js"
+    "utils/hooks/use-async.js",
+    "client/src/components/layout.js"
   ],
   "exclude": ["node_modules"]
 }

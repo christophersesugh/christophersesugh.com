@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Roboto", "Lucida Sans Regular", "Lucida Grande",
+  font-family: "DM Mono", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
